@@ -1,0 +1,406 @@
+@import "compass/css3";
+@import "compass/css3/transform";
+
+/*** sass functions includes extends ***/
+
+@mixin flexbox() {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+}
+
+@mixin flex($values) {
+	-webkit-box-flex: $values;
+	-moz-box-flex:  $values;
+	-webkit-flex:  $values;
+	-ms-flex:  $values;
+	flex:  $values;
+}
+
+@mixin order($val) {
+	-webkit-box-ordinal-group: $val;  
+	-moz-box-ordinal-group: $val;     
+	-ms-flex-order: $val;     
+	-webkit-order: $val;  
+	order: $val;
+}
+
+@function calculateRem($size) {
+	$remSize: $size / 16px;
+	@return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+	font-size: $size;
+	font-size: calculateRem($size);
+}
+
+@mixin screen-xs {
+	@media (max-width: 767px) {
+		@content;
+	}
+}
+
+@mixin screen-sm {
+	@media (min-width: 768px) and (max-width: 991px) {
+		@content;
+	}
+}
+
+@mixin screen-md {
+	@media (min-width: 992px) and (max-width: 1199px) {
+		@content;
+	}
+}
+
+@mixin screen-lg {
+	@media (min-width: 1200px) {
+		@content;
+	}
+}
+
+@mixin keyframes($animation-name) {
+	@-webkit-keyframes $animation-name {
+		@content;
+	}
+	@-moz-keyframes $animation-name {
+		@content;
+	}  
+	@-ms-keyframes $animation-name {
+		@content;
+	}
+	@-o-keyframes $animation-name {
+		@content;
+	}  
+	@keyframes $animation-name {
+		@content;
+	}
+}
+
+@mixin animation($str) {
+	-webkit-animation: #{$str};
+	-moz-animation: #{$str};
+	-ms-animation: #{$str};
+	-o-animation: #{$str};
+	animation: #{$str};      
+}
+
+@mixin transition($args...) {
+	-webkit-transition: $args;
+	-moz-transition: $args;
+	-ms-transition: $args;
+	-o-transition: $args;
+	transition: $args;
+}
+
+%clearfix {
+	*zoom: 1;
+	&:before, &:after {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
+/*** end ***/
+/*** sass variables ***/
+$color-collection: (#b9383c, #ae215f, #541c77, #462d91,#3c468e, #276990, #00838f, #247369, #3e9a3a, #92b440, #bbba24, #f8bc28,#ff8f00, #ef6c00, #d84315, #4e342e, #414040, #37474f);
+/*** end ***/
+
+::-moz-selection {
+	background-color: #FFA;
+	color: #000;
+}
+
+::selection {
+	background-color: #FFA;
+	color: #000;
+}
+
+a[href], input[type='submit'], input[type='image'], label[for], select, button, .pointer {
+	cursor: pointer;
+	outline: 0;
+}
+
+::-webkit-scrollbar {
+	width: 5px;
+	height: 6px;
+}
+
+::-webkit-scrollbar-track-piece {
+	background-color: #000;
+	border-left: 1px solid #333;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #555;
+	border: #333 thin solid;
+	box-shadow: inset 0 0 5px 1px #333;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: #666;
+	border: #444 thin solid;
+	box-shadow: inset 0 0 1px 1px #666;
+}
+
+%align-top{
+	vertical-align: top;
+}	
+
+%align-middle{
+	vertical-align: middle;
+}	
+
+%text-overflow{
+	text-overflow: ellipsis;
+	overflow: hidden;
+	width: 100%;
+}
+%transition{
+	@include transition(all .2s ease-in-out);	
+}
+
+%block{
+	display: block;
+}
+
+%inline-block{
+	@include inline-block;
+}
+
+%relative{
+	position: relative;
+}
+
+%absolute{
+	position: absolute;
+}
+
+%pointer{
+	cursor: pointer;
+}
+
+%full-width{
+	width: 100%;
+}
+
+%full-height{
+	height: 100%;
+}
+
+%overflow-x-hidden{
+	overflow-x:hidden;
+}
+
+.full-height, .ui-mobile [data-role=page]{
+	@extend %full-height;
+}
+
+%overflow-hidden{
+	overflow:hidden;
+}
+
+%overflow-x-hidden{
+	overflow-x:hidden;
+}
+
+%overflow-y-hidden{
+	overflow-y:hidden;
+}
+
+%pre {
+	white-space: pre-wrap;
+	white-space: -moz-pre-wrap;
+	white-space: -pre-wrap;
+	white-space: -o-pre-wrap;
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
+}
+
+%text-right{
+	text-align: right;
+}
+%text-left{
+	text-align: left;
+}
+%text-center{
+	text-align: center;
+}
+
+html{
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+
+	&, body{
+		margin: 0;
+		padding: 0;
+		font-size: 100%;
+	}
+}
+
+h1, h2, h3 {
+	font-family: 'Roboto';
+	font-weight: 300;
+}
+
+h4, h5, h6 {
+	font-family: 'Roboto Condensed';
+}	
+
+.align-top{
+	@extend %align-top;
+}	
+
+.align-middle{
+	@extend %align-middle;
+}	
+
+body {
+	font-family: 'Roboto';
+	font-weight: 400;
+	background: #fff;		
+}
+
+.wrapper {
+	.container-fluid {	
+		@extend %relative;
+		@extend %overflow-hidden;
+		overflow-y:auto;					
+	}
+}
+
+header {
+	@extend %relative;
+	@include font-size(0px);	
+
+	nav, .header-detail {
+		padding: 0 30px;
+	}
+
+	nav {		
+		margin-top:30px;	
+		@extend %relative;	
+
+		ul{
+
+			&:last-child {
+				@extend %absolute;
+				right: 30px;
+				top: 0;
+				li {
+					padding: 15px 20px; 	
+				}
+			}
+
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			background: #3d3c3c;
+
+			li {
+				@extend %inline-block;
+				padding: 15px 20px;				
+				color: #eee;
+				@include font-size(16px);
+				@extend %pointer;
+				@extend %transition;
+
+				a {
+					color:#eee;		
+
+					&:hover{
+						color:#eee;	
+					}	
+
+					i.fa {
+						@include font-size(20px);
+					}		
+				}
+
+				&.active {
+					background: #d36c76;
+				}
+
+				&:hover, &:focus {
+					background: tint(#d36c76, 15%);
+				}	
+
+				&:active {
+					background: shade(#d36c76, 50%);
+				}
+			}
+		}
+	}
+
+	.header-detail 
+	{
+		@extend %relative;	
+		height: 60px;
+
+		.title, .search{
+			@extend %absolute;
+			top: 30px;				
+			
+			input[type=search], button[type=button] {
+				@extend %transition;
+				@include font-size(15px);
+			}		
+		}
+		
+		.title {	
+			width: 300px;
+			height: 28px;
+			background: transparent url(../images/title.png) center no-repeat;
+		}
+
+		.search {			
+			right: 30px;
+			input[type=search]{
+				border:0;
+				background: #f5f4f4;
+				padding: 7px 15px;
+				width:180px;				
+				outline: 0;
+				color:#999;									
+
+				&:hover, &:focus {
+					background: #f0f0f0;
+				}
+			}
+
+			button[type=button]{
+				border:0;
+				background: #3d3c3c;
+				padding:7px 10px;
+				color: #fff;	
+				@extend %pointer;
+
+				&:hover, &:focus {
+					background: #d36c76;
+				}	
+
+				&:active {
+					background: shade(#d36c76, 50%);
+				}		
+			}
+		}
+
+
+	}
+
+	&:before {
+		content: "";
+		@extend %absolute;
+		@extend %full-width;
+		height: 5px;		
+		background-color: #ffffff; 
+		@include filter-gradient(#ffffff, #ffffff, horizontal); 
+		@include background-image(linear-gradient(left,  #ffffff 0%,#d17980 35%,#d1626b 45%,#ce8a8e 58%,#d18188 71%,#ffffff 100%));
+
+	}
+}
