@@ -3,55 +3,15 @@
 <head>
     <meta charset="utf-8">
     <title>Arul Institute</title>   
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,300|Roboto+Condensed' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400,300,700,600' rel='stylesheet' type='text/css'>
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
     <link rel=stylesheet href="css/bootstrap.min.css">
     <link rel=stylesheet href="css/font-awesome.min.css">
     <link rel=stylesheet href="css/layout.css">  
 </head>
-<body>
-
+<body style="height:1000px;">
     <div class="wrapper">
-        <div class="container-fluid">
-            <header id="header">
-                <div class="header-detail">
-                    <div class="title"></div>
-                    <div class="search">
-                        <input type="search" name="search">
-                        <button type="button">
-                            <i class="fa fa-search"></i>
-                        </button>
-                    </div>
-                </div>
-                <nav>
-                    <ul>
-                        <li class="active"><a href="#"></a>Home</li>
-                        <li><a href="#"></a>Students</li>
-                        <li><a href="#"></a>Enroll</li>
-                        <li><a href="#"></a>About</li>
-                        <li><a href="#"></a>Contact</li>
-                    </ul>
-                    <ul>
-                        <li>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                        </li>
-                    </ul>
-                </nav>
-            </header><!-- /header -->
-            <div>
-                <div class="slider" style="height:450px">
-                    <div style="width:100%; height:100%; overflow:hidden; position:relative">
-                        <img src="images/1.jpg" style="position:absolute;
-    top:0;
-    bottom:0;
-    margin:auto auto auto auto;width:100%;height:auto;padding:0 30px">
-                    </div>
-                </div>
-            </div>
-        </div>
+        Scroll
     </div>
 
     <script src="js/jquery-1.7.1.min.js"></script>
@@ -59,5 +19,25 @@
     <script src="js/angular.min.js"></script>    
 
     <script src="app.js"></script>
+    <script>
+        $('html, body').on('DOMMouseScroll mousewheel scroll', function(ev) {
+            var $this = $(this),
+            scrollTop = this.scrollTop,
+            scrollHeight = this.scrollHeight,
+            height = $this.height(),
+            delta = ev.originalEvent.wheelDelta,
+            up = delta > 0;
+
+            var prevent = function() {
+                ev.stopPropagation();
+                ev.preventDefault();
+                ev.returnValue = false;
+                return false;
+            }
+
+            $this.scrollTop(0);
+            return prevent();            
+        });
+    </script>
 </body>
 </html>
