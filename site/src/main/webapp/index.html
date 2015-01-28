@@ -3,61 +3,66 @@
 <head>
     <meta charset="utf-8">
     <title>Arul Institute</title>   
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,300|Roboto+Condensed' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400,300,700,600' rel='stylesheet' type='text/css'>
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
     <link rel=stylesheet href="css/bootstrap.min.css">
     <link rel=stylesheet href="css/font-awesome.min.css">
     <link rel=stylesheet href="css/layout.css">  
 </head>
 <body>
-
     <div class="wrapper">
-        <div class="container-fluid">
-            <header id="header">
-                <div class="header-detail">
-                    <div class="title"></div>
-                    <div class="search">
-                        <input type="search" name="search">
-                        <button type="button">
-                            <i class="fa fa-search"></i>
-                        </button>
-                    </div>
-                </div>
-                <nav>
-                    <ul>
-                        <li class="active"><a href="#"></a>Home</li>
-                        <li><a href="#"></a>Students</li>
-                        <li><a href="#"></a>Enroll</li>
-                        <li><a href="#"></a>About</li>
-                        <li><a href="#"></a>Contact</li>
-                    </ul>
-                    <ul>
-                        <li>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                        </li>
-                    </ul>
-                </nav>
-            </header><!-- /header -->
-            <div>
-                <div class="slider" style="height:450px">
-                    <div style="width:100%; height:100%; overflow:hidden; position:relative">
-                        <img src="images/1.jpg" style="position:absolute;
-    top:0;
-    bottom:0;
-    margin:auto auto auto auto;width:100%;height:auto;padding:0 30px">
-                    </div>
-                </div>
+        <div class="background-slider">
+            <div class="cycle-slideshow" data-cycle-slides="> div">                
+                <div class="cycle-image img-1"></div>
+                <div class="cycle-image img-2"></div>
+                <div class="cycle-image img-3"></div>
+                <div class="cycle-image img-4"></div>
+                <div class="cycle-image img-5"></div>
             </div>
         </div>
-    </div>
+        <div class="text-slider">
+            <div class="cycle-slideshow"  data-cycle-fx="scrollHorz" data-cycle-slides="> div">
+                <div class="cycle-text">
+                    <div>
+                        <p>Arul institute</p>
+                        <p>ground for excellence</p>
+                    </div>
+                </div>
+                <div class="cycle-text">
+                    <div>
+                        <p>Education is not the learning of facts</p>
+                        <p>but the training of the mind to think</p>
+                    </div>
+                </div>
+                <div class="cycle-text">
+                    <div>
+                        <p>Confidence and hard work is the best</p>
+                        <p>medicine to kill the disease called failure</p>
+                    </div>
+                </div>
+                <div class="cycle-text">
+                    <div>
+                       <p>Text line one</p>
+                       <p>text line three and next</p>
+                   </div>
+               </div>
+               <div class="cycle-text">
+                   <div>
+                       <p>Sample text</p>
+                       <p>text line three and next</p>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
 
-    <script src="js/jquery-1.7.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/angular.min.js"></script>    
+   <script src="js/jquery-1.7.1.min.js"></script>
+   <script src="js/bootstrap.min.js"></script>
+   <script src="js/angular.min.js"></script>    
+   <script src="js/jquery.cycle2.js"></script>
+   <script src="app.js"></script>
+   <script>
 
-    <script src="app.js"></script>
+   </script>
 </body>
 </html>
