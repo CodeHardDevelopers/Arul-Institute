@@ -79,7 +79,7 @@
 	}
 }
 
-@mixin animation($str) {
+@mixin animation($str...) {
 	-webkit-animation: #{$str};
 	-moz-animation: #{$str};
 	-ms-animation: #{$str};
@@ -244,9 +244,17 @@ a[href], input[type='submit'], input[type='image'], label[for], select, button, 
 	text-align: center;
 }
 
+@mixin element($element){
+	@for $i from 1 through 5 {					
+		.cycle-image.img-#{$i} { 
+			background-image :  url(../images/stock/#{$i}.jpg); 
+		}
+	}
+}
+
 html {
-	width: 100%;
-	height: 100%;
+	@extend %full-width;
+	@extend %full-height;	
 	overflow: auto;
 
 	&, body{
@@ -255,7 +263,7 @@ html {
 		font-size: 100%;
 		font-family: 'Open Sans', sans-serif;
 		font-weight: 600;
-		background: #fff;
+		background: #000;
 		@extend %user-select-text; 
 		-webkit-font-smoothing: antialiased;    
 		-moz-osx-font-smoothing: grayscale;     
@@ -264,7 +272,9 @@ html {
 		-webkit-animation-duration: 0.1s;
 		-webkit-animation-iteration-count: 1;
 		-webkit-animation-timing-function: linear;  
-		@extend %relative;		
+		@extend %relative;	
+		@extend %full-width;
+		@extend %full-height;	
 	}
 }
 
@@ -287,140 +297,89 @@ h4, h5, h6 {
 }
 
 .wrapper {
-	.container-fluid {	
-		@extend %relative;
+	@extend %full-width;
+	@extend %full-height;
+	@extend %relative;
+
+	.text-slider, .background-slider {
+		@extend %absolute;
 		@extend %overflow-hidden;
-		overflow-y:auto;					
+		@extend %full-width;
+		@extend %full-height;
+		overflow:hidden;
+
+		.cycle-slideshow {
+			@extend %relative;
+			@extend %full-width;
+			@extend %full-height;	
+		}
 	}
+
+	.background-slider {	
+		background: #333;			
+
+		.cycle-slideshow {	
+			.cycle-image {
+				@extend %full-width;
+				@extend %full-height;
+				background-size:cover;	
+
+				&:before {
+					@extend %absolute;
+					@extend %full-width;
+					@extend %full-height;
+					background: #000;
+					opacity: 0.7;
+					content: "";
+					z-index: 101;
+				}
+			}
+
+			@include element('slide');
+		}					
+	}
+
+	.text-slider  {
+		.cycle-slideshow {	
+
+			.cycle-text {
+				@extend %full-width;
+				@extend %full-height;
+				@extend %relative;
+				opacity: 0;
+
+				&.cycle-slide-active{
+					opacity: 1;					
+				}
+
+				& > div {
+					@extend %absolute;
+					top:50%;
+					left: 15vmin;
+					margin-top: -20vmin;	
+					z-index: 300;
+				}
+
+				p {					
+					color:#333;
+					font-size: 6vmin;					
+					font-weight: 100;					
+					padding: 5px 17px;	
+					display: inline-block;
+
+					float: left;
+					clear: left;					
+
+					background: rgba(255, 255, 255, 0.8)					
+				}		
+			}
+		}
+	}	
 }
 
 header {
 	@extend %relative;
 	@include font-size(0px);	
 
-	nav, .header-detail {
-		padding: 0 30px;
-	}
-
-	nav {		
-		margin-top:30px;	
-		@extend %relative;	
-
-		ul{
-
-			&:last-child {
-				@extend %absolute;
-				right: 30px;
-				top: 0;
-				li {
-					padding: 15px 20px; 	
-				}
-			}
-
-			margin: 0;
-			padding: 0;
-			list-style: none;
-			background: #3d3c3c;
-
-			li {
-				@extend %inline-block;
-				padding: 15px 20px;				
-				color: #eee;
-				@include font-size(16px);
-				@extend %pointer;
-				@extend %transition;
-
-				a {
-					color:#eee;		
-
-					&:hover{
-						color:#eee;	
-					}	
-
-					i.fa {
-						@include font-size(20px);
-					}		
-				}
-
-				&.active {
-					background: #d36c76;
-				}
-
-				&:hover, &:focus {
-					background: tint(#d36c76, 15%);
-				}	
-
-				&:active {
-					background: shade(#d36c76, 50%);
-				}
-			}
-		}
-	}
-
-	.header-detail 
-	{
-		@extend %relative;	
-		height: 60px;
-
-		.title, .search{
-			@extend %absolute;
-			top: 30px;				
-			
-			input[type=search], button[type=button] {
-				@extend %transition;
-				@include font-size(15px);
-			}		
-		}
-		
-		.title {	
-			width: 300px;
-			height: 28px;
-			background: transparent url(../images/title.png) center no-repeat;
-		}
-
-		.search {			
-			right: 30px;
-			input[type=search]{
-				border:0;
-				background: #f5f4f4;
-				padding: 7px 15px;
-				width:180px;				
-				outline: 0;
-				color:#999;									
-
-				&:hover, &:focus {
-					background: #f0f0f0;
-				}
-			}
-
-			button[type=button]{
-				border:0;
-				background: #3d3c3c;
-				padding:7px 10px;
-				color: #fff;	
-				@extend %pointer;
-
-				&:hover, &:focus {
-					background: #d36c76;
-				}	
-
-				&:active {
-					background: shade(#d36c76, 50%);
-				}		
-			}
-		}
-
-
-	}
-
-	&:before {
-		content: "";
-		@extend %absolute;
-		@extend %full-width;
-		height: 5px;		
-		background-color: #ffffff; 
-		@include filter-gradient(#ffffff, #ffffff, horizontal); 
-		@include background-image(linear-gradient(left,  #ffffff 0%,#d17980 35%,#d1626b 45%,#ce8a8e 58%,#d18188 71%,#ffffff 100%));
-
-	}
+	
 }

@@ -9,35 +9,60 @@
     <link rel=stylesheet href="css/font-awesome.min.css">
     <link rel=stylesheet href="css/layout.css">  
 </head>
-<body style="height:1000px;">
+<body>
     <div class="wrapper">
-        Scroll
-    </div>
+        <div class="background-slider">
+            <div class="cycle-slideshow" data-cycle-slides="> div">                
+                <div class="cycle-image img-1"></div>
+                <div class="cycle-image img-2"></div>
+                <div class="cycle-image img-3"></div>
+                <div class="cycle-image img-4"></div>
+                <div class="cycle-image img-5"></div>
+            </div>
+        </div>
+        <div class="text-slider">
+            <div class="cycle-slideshow"  data-cycle-fx="scrollHorz" data-cycle-slides="> div">
+                <div class="cycle-text">
+                    <div>
+                        <p>Arul institute</p>
+                        <p>ground for excellence</p>
+                    </div>
+                </div>
+                <div class="cycle-text">
+                    <div>
+                        <p>Education is not the learning of facts</p>
+                        <p>but the training of the mind to think</p>
+                    </div>
+                </div>
+                <div class="cycle-text">
+                    <div>
+                        <p>Confidence and hard work is the best</p>
+                        <p>medicine to kill the disease called failure</p>
+                    </div>
+                </div>
+                <div class="cycle-text">
+                    <div>
+                       <p>Text line one</p>
+                       <p>text line three and next</p>
+                   </div>
+               </div>
+               <div class="cycle-text">
+                   <div>
+                       <p>Sample text</p>
+                       <p>text line three and next</p>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
 
-    <script src="js/jquery-1.7.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/angular.min.js"></script>    
+   <script src="js/jquery-1.7.1.min.js"></script>
+   <script src="js/bootstrap.min.js"></script>
+   <script src="js/angular.min.js"></script>    
+   <script src="js/jquery.cycle2.js"></script>
+   <script src="app.js"></script>
+   <script>
 
-    <script src="app.js"></script>
-    <script>
-        $('html, body').on('DOMMouseScroll mousewheel scroll', function(ev) {
-            var $this = $(this),
-            scrollTop = this.scrollTop,
-            scrollHeight = this.scrollHeight,
-            height = $this.height(),
-            delta = ev.originalEvent.wheelDelta,
-            up = delta > 0;
-
-            var prevent = function() {
-                ev.stopPropagation();
-                ev.preventDefault();
-                ev.returnValue = false;
-                return false;
-            }
-
-            $this.scrollTop(0);
-            return prevent();            
-        });
-    </script>
+   </script>
 </body>
 </html>
