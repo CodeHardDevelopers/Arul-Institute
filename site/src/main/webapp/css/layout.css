@@ -44,11 +44,20 @@ a[href], input[type='submit'], input[type='image'], label[for], select, button, 
   vertical-align: middle;
 }
 
-html, html body, .wrapper, .wrapper .text-slider .cycle-slideshow, .wrapper .background-slider .cycle-slideshow, .wrapper .text-slider .cycle-slideshow .cycle-text, header {
+.wrapper .index-page header .header-nav ul li {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+}
+
+html, html body, .wrapper, .wrapper .text-slider .cycle-slideshow, .wrapper .background-slider .cycle-slideshow, .wrapper .pages, .wrapper .index-page header, .wrapper .text-slider .cycle-slideshow .cycle-text, header {
   position: relative;
 }
 
-.wrapper .text-slider, .wrapper .background-slider, .wrapper .background-slider .cycle-slideshow .cycle-image:before, .wrapper .text-slider .cycle-slideshow .cycle-text > div {
+.wrapper .text-slider, .wrapper .background-slider, .wrapper .index-page header .header-nav, .wrapper .background-slider .cycle-slideshow .cycle-image:before, .wrapper .text-slider .cycle-slideshow .cycle-text > div {
   position: absolute;
 }
 
@@ -60,15 +69,15 @@ html, html body {
   user-select: text;
 }
 
-html, html body, .wrapper, .wrapper .text-slider, .wrapper .background-slider, .wrapper .text-slider .cycle-slideshow, .wrapper .background-slider .cycle-slideshow, .wrapper .background-slider .cycle-slideshow .cycle-image, .wrapper .background-slider .cycle-slideshow .cycle-image:before, .wrapper .text-slider .cycle-slideshow .cycle-text {
+html, html body, .wrapper, .wrapper .text-slider, .wrapper .background-slider, .wrapper .text-slider .cycle-slideshow, .wrapper .background-slider .cycle-slideshow, .wrapper .pages, .wrapper .index-page, .wrapper .index-page header, .wrapper .background-slider .cycle-slideshow .cycle-image, .wrapper .background-slider .cycle-slideshow .cycle-image:before, .wrapper .text-slider .cycle-slideshow .cycle-text {
   width: 100%;
 }
 
-.full-height, .ui-mobile [data-role=page], html, html body, .wrapper, .wrapper .text-slider, .wrapper .background-slider, .wrapper .text-slider .cycle-slideshow, .wrapper .background-slider .cycle-slideshow, .wrapper .background-slider .cycle-slideshow .cycle-image, .wrapper .background-slider .cycle-slideshow .cycle-image:before, .wrapper .text-slider .cycle-slideshow .cycle-text {
+.full-height, .ui-mobile [data-role=page], html, html body, .wrapper, .wrapper .text-slider, .wrapper .background-slider, .wrapper .text-slider .cycle-slideshow, .wrapper .background-slider .cycle-slideshow, .wrapper .pages, .wrapper .index-page, .wrapper .background-slider .cycle-slideshow .cycle-image, .wrapper .background-slider .cycle-slideshow .cycle-image:before, .wrapper .text-slider .cycle-slideshow .cycle-text {
   height: 100%;
 }
 
-.wrapper .text-slider, .wrapper .background-slider {
+.wrapper .text-slider, .wrapper .background-slider, .wrapper .index-page header {
   overflow: hidden;
 }
 
@@ -103,6 +112,64 @@ h4, h5, h6 {
 
 .wrapper .text-slider, .wrapper .background-slider {
   overflow: hidden;
+}
+.wrapper .pages {
+  z-index: 1000;
+}
+.wrapper .index-page header {
+  height: 100px;
+}
+.wrapper .index-page header .title {
+  padding: 15px 0 0 80px;
+}
+.wrapper .index-page header .title div {
+  font-size: 40px;
+  font-size: 2.5rem;
+  font-weight: 200;
+  color: #fff;
+  text-shadow: 1px 1px 2px #1B1B1B;
+}
+.wrapper .index-page header .title p {
+  font-size: 20px;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #F2B199;
+  padding-left: 5px;
+}
+.wrapper .index-page header .header-nav {
+  top: 50%;
+  right: 80px;
+  margin-top: -28px;
+}
+.wrapper .index-page header .header-nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.wrapper .index-page header .header-nav ul li {
+  font-size: 18px;
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+.wrapper .index-page header .header-nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 16px;
+  margin-left: 5px;
+  display: block;
+  border-radius: 3px;
+}
+.wrapper .index-page header .header-nav ul li a.nav-highlight {
+  background: #F2B199;
+  color: #000;
+}
+.wrapper .index-page header .header-nav ul li a:hover {
+  color: #F2B199;
+  text-decoration: none;
+  background: rgba(0, 0, 0, 0.5);
+}
+.wrapper .index-page header .header-nav ul li a:active {
+  color: #A3715E;
 }
 .wrapper .background-slider {
   background: #333;
