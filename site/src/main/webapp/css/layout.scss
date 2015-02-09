@@ -328,6 +328,7 @@ header {
 		}	
 		p {
 			@include font-size(20px);
+			@extend %transition;
 			font-weight: 400;
 			color: #F2B199;	
 			padding-left: 5px;	
@@ -359,6 +360,10 @@ header {
 					display: block;
 					border-radius: 3px;
 					@extend %transition;
+
+					&.selected {
+						background: rgba(0,0,0, 0.5);
+					}
 
 					&.nav-highlight{
 						background: #F2B199;

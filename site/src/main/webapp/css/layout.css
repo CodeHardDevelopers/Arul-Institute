@@ -44,7 +44,7 @@ a[href], input[type='submit'], input[type='image'], label[for], select, button, 
   vertical-align: middle;
 }
 
-header, header .title, header .header-nav ul li a {
+header, header .title, header .title p, header .header-nav ul li a {
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   -ms-transition: all 0.2s ease-in-out;
@@ -171,6 +171,9 @@ header .header-nav ul li a {
   margin-left: 5px;
   display: block;
   border-radius: 3px;
+}
+header .header-nav ul li a.selected {
+  background: rgba(0, 0, 0, 0.5);
 }
 header .header-nav ul li a.nav-highlight {
   background: #F2B199;

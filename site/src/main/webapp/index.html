@@ -11,19 +11,16 @@
     <link rel=stylesheet href="css/layout.css">  
 </head>
 <body>
-    <header id="header" class="">                
+    <header id="header" ng-controller="HeaderController as hCtrl" ng-class="{navigated: hCtrl.navigated}">                
      <div class="title">
          <div>@rul Institute</div>
          <p>ground for excellence</p>
      </div>
      <div class="header-nav">
          <ul>
-             <li><a href="#Home">Home</a></li>
-             <li><a href="#About">About</a></li>
-             <li><a href="#Course">Course</a></li>
-             <li><a href="#Instructions">Instructions</a></li>
-             <li><a href="#Materials">Materials</a></li>
-             <li><a class="nav-highlight" href="#Contact">Contact</a></li>
+             <li ng-repeat="nav in hCtrl.navigators track by nav.index">
+                 <a ng-click="hCtrl.moveTo(nav)" ng-class="{'nav-highlight': nav.highlight, selected: nav.selected}" href="#{{nav.page}}" ng-bind="nav.page"></a>
+             </li>             
          </ul>
      </div>                 
  </header><!-- /header -->
@@ -36,7 +33,7 @@
         <div class="cycle-image img-5"></div>
     </div>
 </div>
-<div class="wrapper">    
+<div class="wrapper" page="selectedPage" beforeMove="beforeMove(index)" afterMove="beforeMove(index)">    
     <section class="pages">
        <div class="text-slider">
            <div class="cycle-slideshow" data-cycle-fx="scrollHorz" data-cycle-slides="> div">
@@ -85,21 +82,7 @@
 <script src="js/jquery.onepage-scroll.min.js"></script>
 <script src="app.js"></script>
 <script>
-    $(".wrapper").onepage_scroll({
-        sectionContainer: "section", 
-        loop: false,
-        updateURL: false,              
-        beforeMove: function(index) {
-            if(index > 1) {
-                $("header").addClass('navigated');
-            }else{
-                 $("header").removeClass('navigated');
-            }
-        },  
-        afterMove: function(index) {
-
-        },   
-    });
+    
 </script>
 </body>
 </html>
