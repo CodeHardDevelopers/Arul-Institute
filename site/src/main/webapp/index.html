@@ -11,81 +11,81 @@
     <link rel=stylesheet href="css/layout.css">  
 </head>
 <body>
-    <div class="wrapper">    
-        <div class="background-slider">
-            <div class="cycle-slideshow" data-cycle-slides="> div">                
-                <div class="cycle-image img-1"></div>
-                <div class="cycle-image img-2"></div>
-                <div class="cycle-image img-3"></div>
-                <div class="cycle-image img-4"></div>
-                <div class="cycle-image img-5"></div>
+    <header id="header" class="">                
+       <div class="title">
+           <div>@rul Institute</div>
+           <p>ground for excellence</p>
+       </div>
+       <div class="header-nav">
+           <ul>
+               <li><a href="#Home">Home</a></li>
+               <li><a href="#About">About</a></li>
+               <li><a href="#Course">Course</a></li>
+               <li><a href="#Instructions">Instructions</a></li>
+               <li><a href="#Materials">Materials</a></li>
+               <li><a class="nav-highlight" href="#Contact">Contact</a></li>
+           </ul>
+       </div>                 
+   </header><!-- /header -->
+   <div class="index-background">
+       <div class="cycle-slideshow" data-cycle-slides="> div">                
+        <div class="cycle-image img-1"></div>
+        <div class="cycle-image img-2"></div>
+        <div class="cycle-image img-3"></div>
+        <div class="cycle-image img-4"></div>
+        <div class="cycle-image img-5"></div>
+    </div>
+</div>
+<div class="wrapper">    
+    <section class="pages">
+     <div class="text-slider">
+         <div class="cycle-slideshow" data-cycle-fx="scrollHorz" data-cycle-slides="> div">
+            <div class="cycle-text">
+                <div>
+                    <p>Arul institute</p>
+                    <p>ground for excellence</p>
+                </div>
             </div>
-        </div>
-        <div class="text-slider">
-            <div class="cycle-slideshow"  data-cycle-fx="scrollHorz" data-cycle-slides="> div">
-                <div class="cycle-text">
-                    <div>
-                        <p>Arul institute</p>
-                        <p>ground for excellence</p>
-                    </div>
+            <div class="cycle-text">
+                <div>
+                    <p>Education is not the learning of facts</p>
+                    <p>but the training of the mind to think</p>
                 </div>
-                <div class="cycle-text">
-                    <div>
-                        <p>Education is not the learning of facts</p>
-                        <p>but the training of the mind to think</p>
-                    </div>
+            </div>
+            <div class="cycle-text">
+                <div>
+                    <p>Confidence and hard work is the best</p>
+                    <p>medicine to kill the disease called failure</p>
                 </div>
-                <div class="cycle-text">
-                    <div>
-                        <p>Confidence and hard work is the best</p>
-                        <p>medicine to kill the disease called failure</p>
-                    </div>
-                </div>
-                <div class="cycle-text">
-                    <div>
-                     <p>Text line one</p>
-                     <p>text line three and next</p>
-                 </div>
+            </div>
+            <div class="cycle-text">
+                <div>
+                 <p>Text line one</p>
+                 <p>text line three and next</p>
              </div>
-             <div class="cycle-text">
-                 <div>
-                     <p>Sample text</p>
-                     <p>text line three and next</p>
-                 </div>
+         </div>
+         <div class="cycle-text">
+             <div>
+                 <p>Sample text</p>
+                 <p>text line three and next</p>
              </div>
          </div>
      </div>
-     <div class="pages">
-         <div class="index-page">
-             <header id="header" class="">                
-                 <div class="title">
-                     <div>@rul Institute</div>
-                     <p>ground for excellence</p>
-                 </div>
-                 <div class="header-nav">
-                     <ul>
-                         <li><a href="#Home">Home</a></li>
-                         <li><a href="#About">About</a></li>
-                         <li><a href="#Course">Course</a></li>
-                         <li><a href="#Instructions">Instructions</a></li>
-                         <li><a href="#Materials">Materials</a></li>
-                         <li><a class="nav-highlight" href="#Contact">Contact</a></li>
-                     </ul>
-                 </div>                 
-             </header><!-- /header -->
-         </div>
-     </div>
-     <div>Hello</div>
- </div>
+ </section>
+ <section class="pages">Page2</section>
+ <section class="pages">Page3</section>
+ <section class="pages">Page4</section>
+ <section class="pages">Page5</section>
+</div>
 
- <script src="js/jquery-1.7.1.min.js"></script>
- <script src="js/bootstrap.min.js"></script>
- <script src="js/angular.min.js"></script>    
- <script src="js/jquery.cycle2.js"></script>
- <script src="js/jquery.onepage-scroll.min.js"></script>
- <script src="app.js"></script>
- <script>
-   // $(".wrapper").onepage_scroll({sectionContainer: "div");
- </script>
+<script src="js/jquery-1.7.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/angular.min.js"></script>    
+<script src="js/jquery.cycle2.js"></script>
+<script src="js/jquery.onepage-scroll.min.js"></script>
+<script src="app.js"></script>
+<script>
+    $(".wrapper").onepage_scroll({sectionContainer: "section", loop: false,});
+</script>
 </body>
 </html>

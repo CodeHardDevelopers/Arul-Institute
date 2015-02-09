@@ -44,7 +44,7 @@ a[href], input[type='submit'], input[type='image'], label[for], select, button, 
   vertical-align: middle;
 }
 
-.wrapper .index-page header .header-nav ul li {
+header .header-nav ul li {
   display: -moz-inline-stack;
   display: inline-block;
   vertical-align: middle;
@@ -53,11 +53,11 @@ a[href], input[type='submit'], input[type='image'], label[for], select, button, 
   *display: inline;
 }
 
-html, html body, .wrapper, .wrapper .text-slider .cycle-slideshow, .wrapper .background-slider .cycle-slideshow, .wrapper .pages, .wrapper .index-page header, .wrapper .text-slider .cycle-slideshow .cycle-text, header {
+html, html body, .wrapper, .wrapper .pages, .wrapper .pages:first-child > .text-slider .cycle-slideshow, .wrapper .pages:first-child > .text-slider .cycle-slideshow .cycle-text {
   position: relative;
 }
 
-.wrapper .text-slider, .wrapper .background-slider, .wrapper .index-page header .header-nav, .wrapper .background-slider .cycle-slideshow .cycle-image:before, .wrapper .text-slider .cycle-slideshow .cycle-text > div {
+header, header .header-nav, .index-background, .index-background .cycle-slideshow .cycle-image:before, .wrapper .pages:first-child > .text-slider, .wrapper .pages:first-child > .text-slider .cycle-slideshow .cycle-text > div {
   position: absolute;
 }
 
@@ -69,15 +69,15 @@ html, html body {
   user-select: text;
 }
 
-html, html body, .wrapper, .wrapper .text-slider, .wrapper .background-slider, .wrapper .text-slider .cycle-slideshow, .wrapper .background-slider .cycle-slideshow, .wrapper .pages, .wrapper .index-page, .wrapper .index-page header, .wrapper .background-slider .cycle-slideshow .cycle-image, .wrapper .background-slider .cycle-slideshow .cycle-image:before, .wrapper .text-slider .cycle-slideshow .cycle-text {
+html, html body, header, .index-background, .index-background .cycle-slideshow, .index-background .cycle-slideshow .cycle-image, .index-background .cycle-slideshow .cycle-image:before, .wrapper, .wrapper .pages, .wrapper .pages:first-child > .text-slider, .wrapper .pages:first-child > .text-slider .cycle-slideshow, .wrapper .pages:first-child > .text-slider .cycle-slideshow .cycle-text {
   width: 100%;
 }
 
-.full-height, .ui-mobile [data-role=page], html, html body, .wrapper, .wrapper .text-slider, .wrapper .background-slider, .wrapper .text-slider .cycle-slideshow, .wrapper .background-slider .cycle-slideshow, .wrapper .pages, .wrapper .index-page, .wrapper .background-slider .cycle-slideshow .cycle-image, .wrapper .background-slider .cycle-slideshow .cycle-image:before, .wrapper .text-slider .cycle-slideshow .cycle-text {
+.full-height, .ui-mobile [data-role=page], html, html body, .index-background, .index-background .cycle-slideshow, .index-background .cycle-slideshow .cycle-image, .index-background .cycle-slideshow .cycle-image:before, .wrapper, .wrapper .pages, .wrapper .pages:first-child > .text-slider, .wrapper .pages:first-child > .text-slider .cycle-slideshow, .wrapper .pages:first-child > .text-slider .cycle-slideshow .cycle-text {
   height: 100%;
 }
 
-.wrapper .text-slider, .wrapper .background-slider, .wrapper .index-page header {
+header, .wrapper .pages:first-child > .text-slider {
   overflow: hidden;
 }
 
@@ -110,48 +110,43 @@ h4, h5, h6 {
   font-weight: 700;
 }
 
-.wrapper .text-slider, .wrapper .background-slider {
-  overflow: hidden;
-}
-.wrapper .pages {
-  z-index: 1000;
-}
-.wrapper .index-page header {
+header {
+  z-index: 1010;
   height: 100px;
 }
-.wrapper .index-page header .title {
+header .title {
   padding: 15px 0 0 80px;
 }
-.wrapper .index-page header .title div {
+header .title div {
   font-size: 40px;
   font-size: 2.5rem;
   font-weight: 200;
   color: #fff;
   text-shadow: 1px 1px 2px #1B1B1B;
 }
-.wrapper .index-page header .title p {
+header .title p {
   font-size: 20px;
   font-size: 1.25rem;
   font-weight: 400;
   color: #F2B199;
   padding-left: 5px;
 }
-.wrapper .index-page header .header-nav {
+header .header-nav {
   top: 50%;
   right: 80px;
   margin-top: -28px;
 }
-.wrapper .index-page header .header-nav ul {
+header .header-nav ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-.wrapper .index-page header .header-nav ul li {
+header .header-nav ul li {
   font-size: 18px;
   font-size: 1.125rem;
   font-weight: 400;
 }
-.wrapper .index-page header .header-nav ul li a {
+header .header-nav ul li a {
   color: #fff;
   text-decoration: none;
   padding: 8px 16px;
@@ -159,58 +154,70 @@ h4, h5, h6 {
   display: block;
   border-radius: 3px;
 }
-.wrapper .index-page header .header-nav ul li a.nav-highlight {
+header .header-nav ul li a.nav-highlight {
   background: #F2B199;
   color: #000;
 }
-.wrapper .index-page header .header-nav ul li a:hover {
+header .header-nav ul li a:hover {
   color: #F2B199;
   text-decoration: none;
   background: rgba(0, 0, 0, 0.5);
 }
-.wrapper .index-page header .header-nav ul li a:active {
+header .header-nav ul li a:active {
   color: #A3715E;
 }
-.wrapper .background-slider {
-  background: #333;
-}
-.wrapper .background-slider .cycle-slideshow .cycle-image {
+
+.index-background .cycle-slideshow .cycle-image {
   background-size: cover;
 }
-.wrapper .background-slider .cycle-slideshow .cycle-image:before {
+.index-background .cycle-slideshow .cycle-image:before {
   background: #000;
   opacity: 0.7;
   content: "";
   z-index: 101;
 }
-.wrapper .background-slider .cycle-slideshow .cycle-image.img-1 {
+.index-background .cycle-slideshow .cycle-image.img-1 {
   background-image: url(../images/stock/1.jpg);
 }
-.wrapper .background-slider .cycle-slideshow .cycle-image.img-2 {
+.index-background .cycle-slideshow .cycle-image.img-2 {
   background-image: url(../images/stock/2.jpg);
 }
-.wrapper .background-slider .cycle-slideshow .cycle-image.img-3 {
+.index-background .cycle-slideshow .cycle-image.img-3 {
   background-image: url(../images/stock/3.jpg);
 }
-.wrapper .background-slider .cycle-slideshow .cycle-image.img-4 {
+.index-background .cycle-slideshow .cycle-image.img-4 {
   background-image: url(../images/stock/4.jpg);
 }
-.wrapper .background-slider .cycle-slideshow .cycle-image.img-5 {
+.index-background .cycle-slideshow .cycle-image.img-5 {
   background-image: url(../images/stock/5.jpg);
 }
-.wrapper .text-slider .cycle-slideshow .cycle-text {
+
+.onepage-pagination {
+  z-index: 1010;
+}
+
+.wrapper {
+  z-index: 1000;
+}
+.wrapper .pages:not(:first-child) {
+  background: #fff;
+}
+.wrapper .pages:first-child > .text-slider {
+  overflow: hidden;
+}
+.wrapper .pages:first-child > .text-slider .cycle-slideshow .cycle-text {
   opacity: 0;
 }
-.wrapper .text-slider .cycle-slideshow .cycle-text.cycle-slide-active {
+.wrapper .pages:first-child > .text-slider .cycle-slideshow .cycle-text.cycle-slide-active {
   opacity: 1;
 }
-.wrapper .text-slider .cycle-slideshow .cycle-text > div {
+.wrapper .pages:first-child > .text-slider .cycle-slideshow .cycle-text > div {
   top: 50%;
   left: 15vmin;
   margin-top: -20vmin;
   z-index: 300;
 }
-.wrapper .text-slider .cycle-slideshow .cycle-text p {
+.wrapper .pages:first-child > .text-slider .cycle-slideshow .cycle-text p {
   color: #333;
   font-size: 6vmin;
   font-weight: 100;
@@ -219,9 +226,4 @@ h4, h5, h6 {
   float: left;
   clear: left;
   background: rgba(255, 255, 255, 0.8);
-}
-
-header {
-  font-size: 0px;
-  font-size: 0rem;
 }
