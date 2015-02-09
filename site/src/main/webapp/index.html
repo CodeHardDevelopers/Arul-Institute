@@ -12,23 +12,23 @@
 </head>
 <body>
     <header id="header" class="">                
-       <div class="title">
-           <div>@rul Institute</div>
-           <p>ground for excellence</p>
-       </div>
-       <div class="header-nav">
-           <ul>
-               <li><a href="#Home">Home</a></li>
-               <li><a href="#About">About</a></li>
-               <li><a href="#Course">Course</a></li>
-               <li><a href="#Instructions">Instructions</a></li>
-               <li><a href="#Materials">Materials</a></li>
-               <li><a class="nav-highlight" href="#Contact">Contact</a></li>
-           </ul>
-       </div>                 
-   </header><!-- /header -->
-   <div class="index-background">
-       <div class="cycle-slideshow" data-cycle-slides="> div">                
+     <div class="title">
+         <div>@rul Institute</div>
+         <p>ground for excellence</p>
+     </div>
+     <div class="header-nav">
+         <ul>
+             <li><a href="#Home">Home</a></li>
+             <li><a href="#About">About</a></li>
+             <li><a href="#Course">Course</a></li>
+             <li><a href="#Instructions">Instructions</a></li>
+             <li><a href="#Materials">Materials</a></li>
+             <li><a class="nav-highlight" href="#Contact">Contact</a></li>
+         </ul>
+     </div>                 
+ </header><!-- /header -->
+ <div class="index-background">
+     <div class="cycle-slideshow" data-cycle-slides="> div">                
         <div class="cycle-image img-1"></div>
         <div class="cycle-image img-2"></div>
         <div class="cycle-image img-3"></div>
@@ -38,8 +38,8 @@
 </div>
 <div class="wrapper">    
     <section class="pages">
-     <div class="text-slider">
-         <div class="cycle-slideshow" data-cycle-fx="scrollHorz" data-cycle-slides="> div">
+       <div class="text-slider">
+           <div class="cycle-slideshow" data-cycle-fx="scrollHorz" data-cycle-slides="> div">
             <div class="cycle-text">
                 <div>
                     <p>Arul institute</p>
@@ -60,22 +60,22 @@
             </div>
             <div class="cycle-text">
                 <div>
-                 <p>Text line one</p>
-                 <p>text line three and next</p>
-             </div>
-         </div>
-         <div class="cycle-text">
-             <div>
-                 <p>Sample text</p>
-                 <p>text line three and next</p>
-             </div>
-         </div>
-     </div>
- </section>
- <section class="pages">Page2</section>
- <section class="pages">Page3</section>
- <section class="pages">Page4</section>
- <section class="pages">Page5</section>
+                   <p>Text line one</p>
+                   <p>text line three and next</p>
+               </div>
+           </div>
+           <div class="cycle-text">
+               <div>
+                   <p>Sample text</p>
+                   <p>text line three and next</p>
+               </div>
+           </div>
+       </div>
+   </section>
+   <section class="pages">Page2</section>
+   <section class="pages">Page3</section>
+   <section class="pages">Page4</section>
+   <section class="pages">Page5</section>
 </div>
 
 <script src="js/jquery-1.7.1.min.js"></script>
@@ -85,7 +85,21 @@
 <script src="js/jquery.onepage-scroll.min.js"></script>
 <script src="app.js"></script>
 <script>
-    $(".wrapper").onepage_scroll({sectionContainer: "section", loop: false,});
+    $(".wrapper").onepage_scroll({
+        sectionContainer: "section", 
+        loop: false,
+        updateURL: false,              
+        beforeMove: function(index) {
+            if(index > 1) {
+                $("header").addClass('navigated');
+            }else{
+                 $("header").removeClass('navigated');
+            }
+        },  
+        afterMove: function(index) {
+
+        },   
+    });
 </script>
 </body>
 </html>

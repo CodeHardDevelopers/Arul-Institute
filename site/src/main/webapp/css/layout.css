@@ -44,6 +44,14 @@ a[href], input[type='submit'], input[type='image'], label[for], select, button, 
   vertical-align: middle;
 }
 
+header, header .title, header .header-nav ul li a {
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
 header .header-nav ul li {
   display: -moz-inline-stack;
   display: inline-block;
@@ -114,6 +122,16 @@ header {
   z-index: 1010;
   height: 100px;
 }
+header.navigated {
+  background: #353434;
+  height: 75px;
+}
+header.navigated .title {
+  padding-top: 5px;
+}
+header.navigated .title p {
+  opacity: 0;
+}
 header .title {
   padding: 15px 0 0 80px;
 }
@@ -134,7 +152,7 @@ header .title p {
 header .header-nav {
   top: 50%;
   right: 80px;
-  margin-top: -28px;
+  margin-top: -22px;
 }
 header .header-nav ul {
   margin: 0;

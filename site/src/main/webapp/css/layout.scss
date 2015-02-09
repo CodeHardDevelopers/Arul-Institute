@@ -159,7 +159,7 @@ a[href], input[type='submit'], input[type='image'], label[for], select, button, 
 	width: 100%;
 }
 %transition{
-	@include transition(all .1s ease-in-out);	
+	@include transition(all .2s ease-in-out);	
 }
 
 %block{
@@ -302,9 +302,24 @@ header {
 	@extend %overflow-hidden;
 	z-index: 1010;
 	height: 100px;
+	@extend %transition;
+
+	&.navigated {
+		background: #353434;
+		height: 75px;
+
+		.title {
+			padding-top:5px;
+			p {
+				opacity: 0;
+			}
+		}		
+	}
 
 	.title {	
 		padding: 15px 0 0 80px;	
+		@extend %transition;
+
 		div {
 			@include font-size(40px);			
 			font-weight: 200;
@@ -323,7 +338,7 @@ header {
 		@extend %absolute;
 		top:50%;
 		right: 80px;
-		margin-top:-28px;
+		margin-top:-22px;
 
 		ul{
 			margin: 0;
@@ -333,7 +348,7 @@ header {
 			li {
 				@extend %inline-block;
 				@include font-size(18px);
-				font-weight: 400;						
+				font-weight: 400;
 
 
 				a {
@@ -343,6 +358,7 @@ header {
 					margin-left:5px;
 					display: block;
 					border-radius: 3px;
+					@extend %transition;
 
 					&.nav-highlight{
 						background: #F2B199;
@@ -363,8 +379,6 @@ header {
 		}
 	}
 }
-
-
 
 .index-background {
 	@extend %absolute;
@@ -465,6 +479,5 @@ header {
 			}
 		}
 	}
-
 }
 
