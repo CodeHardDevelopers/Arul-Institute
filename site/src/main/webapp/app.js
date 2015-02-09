@@ -1,12 +1,12 @@
 angular.module('app', []);
-angular.module('app').controller('HeaderController', ['$rootScope', '$timeout', function ($rootScope, $timeout) {
+angular.module('app').controller('HeaderController', ['$rootScope', '$timeout', '$location', function ($rootScope, $timeout, $location) {
     var self = this;
     self.navigated = false;
     self.navigators = [{
         index: 1,
         page: "Home",
         highlight: false,
-        selected: true
+        selected: false
     },
     {
         index: 2,
@@ -39,29 +39,60 @@ angular.module('app').controller('HeaderController', ['$rootScope', '$timeout', 
         selected: false
     }];
 
-    $rootScope.$on("page:beforeMove", function (event, args) {
+    function init() {
+        var page = $location.path().split('/')[1];
+        if (page === undefined) {
+            self.navigators[0].selected = true;
+        } else {
+            angular.forEach(self.navigators, function (nav) {
+                if (nav.page == page) {
+                    self.moveTo(nav);
+                }
+            });
+        }
+    }
+
+    $rootScope.$on("page:changed", function (event, args) {
         self.navigated = args > 1;
-        
-        angular.forEach(self.navigators, function(nav) {
+
+        angular.forEach(self.navigators, function (nav) {
             nav.selected = nav.index == args;
+
+            if (nav.selected) $location.path(nav.page);
         });
     });
 
     self.moveTo = function (nav) {
-        $rootScope.$broadcast("page:moveTo", nav.index);        
-    };
-}]).controller('PageController', ['$rootScope', '$scope', '$timeout', function ($rootScope, $scope, $timeout) {
-    $scope.selectedPage = 1;
-
-    $scope.beforeMove = function (index) {
         $timeout(function () {
-            $rootScope.$broadcast("page:beforeMove", index);
+            $rootScope.$broadcast("page:moveTo", nav.index);
         });
     };
 
-    $scope.afterMove = function (index) {};
+    init();
+}]).controller('PageController', ['$rootScope', '$scope', '$timeout', function ($rootScope, $scope, $timeout) {
+    $scope.selectedPage = 0;
+    $scope.prevPage = 0;
+
+    function action(index) {
+        $timeout(function () {
+            $rootScope.$broadcast("page:changed", index);
+        });
+    }
+
+    $scope.beforeMove = function (index) {
+        if ($scope.prevPage < index) {
+            action(index);
+        }
+    };
+
+    $scope.afterMove = function (index) {
+        if ($scope.prevPage > index) {
+            action(index);
+        }
+    };
 
     $rootScope.$on("page:moveTo", function (event, args) {
+        $scope.prevPage = $scope.selectedPage;
         $scope.selectedPage = args;
     });
 }]).directive('wrapper', ['$rootScope', function ($rootScope) {
