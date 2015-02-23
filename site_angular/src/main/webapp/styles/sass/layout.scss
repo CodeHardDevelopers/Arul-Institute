@@ -1,0 +1,488 @@
+@import "compass/css3";
+@import "compass/css3/transform";
+
+/*** sass functions includes extends ***/
+
+@mixin flexbox() {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+}
+
+@mixin flex($values) {
+	-webkit-box-flex: $values;
+	-moz-box-flex:  $values;
+	-webkit-flex:  $values;
+	-ms-flex:  $values;
+	flex:  $values;
+}
+
+@mixin order($val) {
+	-webkit-box-ordinal-group: $val;  
+	-moz-box-ordinal-group: $val;     
+	-ms-flex-order: $val;     
+	-webkit-order: $val;  
+	order: $val;
+}
+
+@function calculateRem($size) {
+	$remSize: $size / 16px;
+	@return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+	font-size: $size;
+	font-size: calculateRem($size);
+}
+
+@mixin screen-xs {
+	@media (max-width: 767px) {
+		@content;
+	}
+}
+
+@mixin screen-sm {
+	@media (min-width: 768px) and (max-width: 991px) {
+		@content;
+	}
+}
+
+@mixin screen-md {
+	@media (min-width: 992px) and (max-width: 1199px) {
+		@content;
+	}
+}
+
+@mixin screen-lg {
+	@media (min-width: 1200px) {
+		@content;
+	}
+}
+
+@mixin keyframes($animation-name) {
+	@-webkit-keyframes $animation-name {
+		@content;
+	}
+	@-moz-keyframes $animation-name {
+		@content;
+	}  
+	@-ms-keyframes $animation-name {
+		@content;
+	}
+	@-o-keyframes $animation-name {
+		@content;
+	}  
+	@keyframes $animation-name {
+		@content;
+	}
+}
+
+@mixin animation($str...) {
+	-webkit-animation: #{$str};
+	-moz-animation: #{$str};
+	-ms-animation: #{$str};
+	-o-animation: #{$str};
+	animation: #{$str};      
+}
+
+@mixin transition($args...) {
+	-webkit-transition: $args;
+	-moz-transition: $args;
+	-ms-transition: $args;
+	-o-transition: $args;
+	transition: $args;
+}
+
+%clearfix {
+	*zoom: 1;
+	&:before, &:after {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
+/*** end ***/
+/*** sass variables ***/
+$color-collection: (#b9383c, #ae215f, #541c77, #462d91,#3c468e, #276990, #00838f, #247369, #3e9a3a, #92b440, #bbba24, #f8bc28,#ff8f00, #ef6c00, #d84315, #4e342e, #414040, #37474f);
+/*** end ***/
+
+::-moz-selection {
+	background-color: #FFA;
+	color: #000;
+}
+
+::selection {
+	background-color: #FFA;
+	color: #000;
+}
+
+a[href], input[type='submit'], input[type='image'], label[for], select, button, .pointer {
+	cursor: pointer;
+	outline: 0;
+}
+
+::-webkit-scrollbar {
+	width: 0px;
+	display: none;
+	
+}
+
+::-webkit-scrollbar-track-piece {
+	background-color: #fff;
+	border:none;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #fff;
+	border:none;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: #fff;	
+}
+
+%align-top{
+	vertical-align: top;
+}	
+
+%align-middle{
+	vertical-align: middle;
+}	
+
+%text-overflow{
+	text-overflow: ellipsis;
+	overflow: hidden;
+	width: 100%;
+}
+%transition{
+	@include transition(all .2s ease-in-out);	
+}
+
+%block{
+	display: block;
+}
+
+%inline-block{
+	@include inline-block;
+}
+
+%relative{
+	position: relative;
+}
+
+%absolute{
+	position: absolute;
+}
+
+%pointer{
+	cursor: pointer;
+}
+%user-select-none{
+	-webkit-user-select: none;  
+	-moz-user-select: none;     
+	-ms-user-select: none;  
+	-o-user-select: none;
+	user-select: none; 
+}   
+
+%user-select-text{
+	-webkit-user-select: text;  
+	-moz-user-select: text;     
+	-ms-user-select: text;  
+	-o-user-select: text;
+	user-select: text; 
+}	
+
+%full-width{
+	width: 100%;
+}
+
+%full-height{
+	height: 100%;
+}
+
+%overflow-x-hidden{
+	overflow-x:hidden;
+}
+
+.full-height, .ui-mobile [data-role=page]{
+	@extend %full-height;
+}
+
+%overflow-hidden{
+	overflow:hidden;
+}
+
+%overflow-x-hidden{
+	overflow-x:hidden;
+}
+
+%overflow-y-hidden{
+	overflow-y:hidden;
+}
+
+%pre {
+	white-space: pre-wrap;
+	white-space: -moz-pre-wrap;
+	white-space: -pre-wrap;
+	white-space: -o-pre-wrap;
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
+}
+
+%text-right{
+	text-align: right;
+}
+%text-left{
+	text-align: left;
+}
+%text-center{
+	text-align: center;
+}
+
+@mixin element($element){
+	@for $i from 1 through 5 {					
+		.cycle-image.img-#{$i} { 
+			background-image :  url(../images/stock/#{$i}.jpg); 
+		}
+	}
+}
+
+html {
+	@extend %full-width;
+	@extend %full-height;	
+	overflow: auto;
+
+	&, body{
+		margin: 0;
+		padding: 0;
+		font-size: 100%;
+		font-family: 'Open Sans', sans-serif;
+		font-weight: 600;
+		background: #000;
+		@extend %user-select-text; 
+		-webkit-font-smoothing: antialiased;    
+		-moz-osx-font-smoothing: grayscale;     
+		-webkit-animation-delay: 0.1s;
+		-webkit-animation-name: fontfix;
+		-webkit-animation-duration: 0.1s;
+		-webkit-animation-iteration-count: 1;
+		-webkit-animation-timing-function: linear;  
+		@extend %relative;	
+		@extend %full-width;
+		@extend %full-height;	
+	}
+}
+
+h1, h2, h3 {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+}
+
+h4, h5, h6 {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+}	
+
+.align-top{
+	@extend %align-top;
+}	
+
+.align-middle{
+	@extend %align-middle;
+}
+
+header {
+	@extend %full-width;
+	@extend %absolute;
+	@extend %overflow-hidden;
+	z-index: 1010;
+	height: 100px;
+	@extend %transition;
+
+	&.navigated {
+		background: #353434;
+		height: 75px;
+
+		.title {
+			padding-top:5px;
+			p {
+				opacity: 0;
+			}
+		}		
+	}
+
+	.title {	
+		padding: 15px 0 0 80px;	
+		@extend %transition;
+
+		div {
+			@include font-size(40px);			
+			font-weight: 200;
+			color:#fff;		
+			text-shadow: 1px 1px 2px #1B1B1B;
+		}	
+		p {
+			@include font-size(20px);
+			@extend %transition;
+			font-weight: 400;
+			color: #F2B199;	
+			padding-left: 5px;	
+		}
+	}
+
+	.header-nav {
+		@extend %absolute;
+		top:50%;
+		right: 80px;
+		margin-top:-22px;
+
+		ul{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+
+			li {
+				@extend %inline-block;
+				@include font-size(18px);
+				font-weight: 400;
+
+
+				a {
+					color:#fff;	
+					text-decoration: none;
+					padding: 8px 16px;
+					margin-left:5px;
+					display: block;
+					border-radius: 3px;
+					@extend %transition;
+
+					&.selected {
+						background: rgba(0,0,0, 0.5);
+					}
+
+					&.nav-highlight{
+						background: #F2B199;
+						color:#000;
+					}							
+
+					&:hover{
+						color: #F2B199;
+						text-decoration: none;
+						background: rgba(0,0,0, 0.5);
+					}
+
+					&:active{
+						color: #A3715E;
+					}
+				}
+			}
+		}
+	}
+}
+
+.index-background {
+	@extend %absolute;
+	@extend %full-width;
+	@extend %full-height;	
+
+	.cycle-slideshow, .cycle-slideshow .cycle-image {
+		@extend %full-width;
+		@extend %full-height;	
+	}
+
+	.cycle-slideshow {
+		.cycle-image {
+			background-size:cover;
+			&:before {
+				@extend %absolute;
+				@extend %full-width;
+				@extend %full-height;
+				background: #000;
+				opacity: 0.7;
+				content: "";
+				z-index: 101;
+			}
+		}
+
+		@include element('slide');
+	}
+}
+
+.onepage-pagination {
+	z-index: 1010;
+}
+
+.wrapper {
+	@extend %relative;
+	@extend %full-width;
+	@extend %full-height;	
+	z-index: 1000;	
+
+	.pages {		
+		@extend %relative;
+		@extend %full-width;
+		@extend %full-height;
+
+		&:not(:first-child) {
+			background: #fff;
+		}
+
+		&:first-child > {
+			.text-slider {
+				@extend %absolute;
+				@extend %overflow-hidden;
+				@extend %full-width;
+				@extend %full-height;
+				overflow:hidden;
+
+				.cycle-slideshow {
+					@extend %relative;
+					@extend %full-width;
+					@extend %full-height;	
+				}
+			}
+
+			.text-slider  {
+				.cycle-slideshow {	
+					.cycle-text {
+						@extend %full-width;
+						@extend %full-height;
+						@extend %relative;
+						opacity: 0;
+
+						&.cycle-slide-active{
+							opacity: 1;					
+						}
+
+						& > div {
+							@extend %absolute;
+							top:50%;
+							left: 15vmin;
+							margin-top: -20vmin;	
+							z-index: 300;
+						}
+
+						p {					
+							color:#333;
+							font-size: 6vmin;					
+							font-weight: 100;					
+							padding: 5px 17px;	
+							display: inline-block;
+
+							float: left;
+							clear: left;					
+
+							background: rgba(255, 255, 255, 0.8)					
+						}		
+					}
+				}
+			}
+		}
+	}
+}
+

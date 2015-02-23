@@ -1,0 +1,140 @@
+
+.checkbox input::before, .checkbox .checkbox-icon::before {
+  font-family: "abchanel-couture", sans-serif;
+  font-size:0.8rem;
+  border-color: $gray;
+  border-radius: 0px !important;
+  border-width: 1px;
+  width: 60%;
+  height: 60%;
+}
+
+.checkbox input:checked::before,
+.checkbox input:checked + .checkbox-icon::before {
+  font-family: $chanel-font-content;
+  background-color: white;
+  border-color: $gray;
+  border-width: 1px;
+}
+
+.checkbox input:after,
+.checkbox-icon:after {
+  border-color: black;
+  top: 20%;
+  left: 11%;
+  width: 11px;
+  height: 6px;
+  border: 2px solid black;
+  border-top: 0px;
+  border-right: 0px;
+}
+
+.item-checkbox {
+  padding-left: 25px;
+
+  .checkbox {
+    height: 10px;
+    left: 0px;
+    top: 62%;
+    padding-left: 0px;
+  }
+}
+
+.collections-checkbox-item,
+.collections-checkbox-white-item {
+    border: 0px;
+    font-size:0.8rem;
+    padding-top:14px;
+    padding-bottom:14px;
+    .item-content {
+      font-family: $chanel-font-content;
+      font-size:0.8rem;
+    }
+}
+
+
+.collections-checkbox-item,
+.collections-checkbox-item.activated {
+  background-color: black;
+  color: white;
+  &:active,
+  &:focus{
+     background-color:black;
+  }
+  .item-content {
+    color: white;
+  }
+}
+
+.collections-checkbox-white-item,
+.collections-checkbox-white-item.activated {
+  background-color: white;
+  color: black;
+  &:active,
+  &:focus{
+     background-color:white;
+  }
+  .item-content {
+    color: black;
+  }
+}
+
+.form-label {
+  font-family: $chanel-font-content;
+  font-size: 0.8rem;
+  color: white;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="search"] {
+  font-family: $chanel-font-content;
+  font-size: 0.9rem;
+  border-radius: 0px;
+  padding: 0.5rem;
+  
+}
+
+//EDITING MY PROFILE 
+.item-input.item-stacked-label{
+	.input-label {
+	    font-family: $chanel-font-content;
+	    font-size: 0.8rem;
+		color:black;
+	}
+	
+ 	input[type="text"]{
+		font-size: 0.8rem;
+	    padding: 0.4rem;
+		border-color: black;
+		border-width: 1px;
+		border-style: solid;	
+	}
+}
+
+textarea {
+    font-family: $chanel-font-content;
+    font-size: 0.9rem;
+	border-radius: 0px;
+	color: black;
+}
+
+textarea.post-description {
+	height:5rem;
+}
+
+.error{
+  border: 0px;
+  background-color: black;
+  color: white;
+  font-family:$chanel-font-content;
+  font-size:0.9rem;
+  font-weight:bold;
+  text-align: center;
+  padding:0.25rem;
+
+  &.on-white{
+    color:black;
+    background-color:white;
+  }
+}

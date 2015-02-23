@@ -1,0 +1,82 @@
+//Alphabetical index
+
+.alpha-index-list {
+	position:fixed;
+	top: 8rem;
+	right: 0rem;
+	text-align:center;
+}
+
+.alpha-index-list-item {
+	font-size:0.6rem;
+	width:60px;
+	line-height:15px;
+}
+.overlay {
+    width: 150px;
+	height: 150px;
+	top:10px;
+	position: fixed;
+	left: 30%;
+	top: 40%;
+	z-index: -1;
+	font-size: 100px;
+	transition: z-index 0.5s step-end, opacity 0.5s linear;
+	opacity: 0;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 150px;
+	background-color: rgb(238, 238, 238);
+	&.visible {
+		opacity: 1;
+		transition: z-index 0.5s step-start, opacity 0.5s linear;
+		z-index: 999;
+		visibility: visible;
+	}
+}
+
+// media query for iPhone4 and iPhone4s
+@media 
+    only screen and (min-device-width: 320px) 
+    and (max-device-width: 480px) 
+    and (-webkit-device-pixel-ratio: 2) 
+    and (device-aspect-ratio: 2/3)
+{
+    .alpha-index-list-item {
+		font-size:9px;
+		width:60px;
+		line-height:12px;
+	}
+}
+
+//media query for iPad
+@media 
+	 only screen and (min-device-width: 768px) 
+	 and (max-device-width: 1024px) 
+{ 
+	.alpha-index-list-item {
+		font-size: 15px;
+		width: 100px;
+		line-height: 33px;
+	}
+	.overlay{
+		left: 43%;
+	}
+}
+@media 
+	only screen and (min-device-width: 768px) 
+	and (max-device-width: 1024px)
+	and (orientation : landscape)
+{ 
+	.alpha-index-list-item {
+		font-size: 13px;
+		width: 100px;
+		line-height: 23px;
+	}
+	.overlay{
+		left: 43%;
+	}
+}
+
+
+

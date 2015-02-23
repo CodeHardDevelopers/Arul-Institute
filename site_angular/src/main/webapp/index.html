@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Arul Institute</title>    
+
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap-theme.css">
+    
+    <!--<link rel="stylesheet" href="styles/css/style.css">-->
+    <link rel="stylesheet" href="styles/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header>    
+        <div class="header-nav">            
+            <!-- navigation menu -->
+            <ul class="nav nav-pills">
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="#">
+                    <div>@rul Institute</div>
+                    <p>ground for excellence</p> 
+                  </a>
+                </div>
+
+                <li><a id="workBtn" ui-sref="home" ui-sref-active="selected" >Home</a></li>
+                <li><a id="aboutBtn" ui-sref="about" ui-sref-active="selected">About Us</a></li>
+                <li><a ui-sref="courses" ui-sref-active="selected">Courses</a></li>
+                <li><a ui-sref="instructions" ui-sref-active="selected">Instructions</a></li>
+                <li><a ui-sref="materials" ui-sref-active="selected">Materials</a></li>
+
+                <li><a ui-sref="contact" ui-sref-active="selected">Contact Us</a></li>
+            </ul>
+        </div>
+    </header>
+
+
+
+    <!-- main content -->            
+    <div ui-view="mainContent"></div>    
+
+
+<script src="lib/jquery/jquery-2.0.3.min.js"></script>
+<script src="lib/jquery/jquery.cycle2.js"></script>
+<!-- <script src="lib/bootstrap/js/bootstrap.min.js"></script> -->
+<script src="lib/angular/angular.js"></script>
+<script src="lib/angular-bootstrap/ui-bootstrap-0.12.0.min.js"></script>
+<script src="lib/angular-animate/angular-animate.js"></script>
+<script src="lib/angular-sanitize/angular-sanitize.js"></script>
+<script src="lib/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="lib/angular-resource/angular-resource.js"></script>
+<script src="lib/angular-cookies/angular-cookies.js"></script>
+<script src="lib/jquery/jquery.fullPage.min.js"></script>
+
+<!-- build:js scripts/scripts.js -->
+<script src="scripts/bootstrap.js"></script>
+<script src="scripts/app.js"></script>
+<script src="scripts/run.js"></script>
+
+<script src="modules/home/controllers/home.ctrl.js"></script>
+<script src="modules/home/controllers/about.ctrl.js"></script>
+<script src="modules/home/controllers/intro.ctrl.js"></script>
+
+<script src="modules/home/directives/fullpage.drv.js"></script>
+
+
+
+
+<script src="modules/courses/controllers/courses.ctrl.js"></script>
+
+
+
+<script src="modules/contact/controllers/contact.ctrl.js"></script>
+
+
+
+<script src="modules/instructions/controllers/instructions.ctrl.js"></script>
+
+
+<script src="modules/materials/controllers/materials.ctrl.js"></script>
+<script src="modules/materials/services/materials.svc.js"></script>
+
+<script type="text/javascript">
+  app.initialize();
+</script>
+</body>
+</html>

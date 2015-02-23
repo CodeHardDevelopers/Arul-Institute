@@ -2,30 +2,45 @@
 <html ng-app="app">
 <head>
     <meta charset="utf-8">
-    <title>Arul Institute</title>   
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400,300,700,600' rel='stylesheet' type='text/css'>
+    <title>Arul Institute</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400,300,700,600'
+          rel='stylesheet' type='text/css'>
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
     <link rel=stylesheet href="css/bootstrap.min.css">
     <link rel=stylesheet href="css/font-awesome.min.css">
     <link rel=stylesheet href="css/onepage-scroll.css">
-    <link rel=stylesheet href="css/layout.css">  
+    <link rel="stylesheet" href="css/jquery.fullPage.css">
+    <link rel=stylesheet href="css/layout.css">
 </head>
 <body>
-    <header id="header" ng-controller="HeaderController as hCtrl" ng-class="{navigated: hCtrl.navigated}">                
-     <div class="title">
-         <div>@rul Institute</div>
-         <p>ground for excellence</p>
-     </div>
-     <div class="header-nav">
-         <ul>
-             <li ng-repeat="nav in hCtrl.navigators track by nav.index">
-                 <a ng-click="hCtrl.moveTo(nav)" ng-class="{'nav-highlight': nav.highlight, selected: nav.selected}" href="#{{nav.page}}" ng-bind="nav.page"></a>
-             </li>             
-         </ul>
-     </div>                 
- </header><!-- /header -->
- <div class="index-background">
-     <div class="cycle-slideshow" data-cycle-slides="> div">                
+<header id="header" ng-controller="HeaderController as hCtrl"
+        ng-class="{navigated: hCtrl.navigated}">
+    <div class="title">
+        <div>@rul Institute</div>
+        <p>ground for excellence</p>
+    </div>
+    <div class="header-nav">
+        <ul id="menu">
+            <!--
+            <li ng-repeat="nav in hCtrl.navigators track by nav.index">
+                <a ng-click="hCtrl.moveTo(nav)"
+                   ng-class="{'nav-highlight': nav.highlight, selected: nav.selected}"
+                   href="#{{nav.page}}" ng-bind="nav.page"></a>
+            </li>-->
+            <li data-menuanchor="firstPage"><a href="#firstPage"  >Home</a></li>
+            <li data-menuanchor="secondPage"><a href="#secondPage">About Us</a></li>
+            <li data-menuanchor="3rdPage"><a href="#3rdPage">Courses</a></li>
+            <li><a href="#instructions" >Instructions</a></li>
+            <li><a href="#materials" >Materials</a></li>
+
+            <li><a href="#contact" >Contact Us</a></li>
+
+        </ul>
+    </div>
+</header>
+<!-- /header -->
+<div class="index-background">
+    <div class="cycle-slideshow" data-cycle-slides="> div">
         <div class="cycle-image img-1"></div>
         <div class="cycle-image img-2"></div>
         <div class="cycle-image img-3"></div>
@@ -33,53 +48,67 @@
         <div class="cycle-image img-5"></div>
     </div>
 </div>
-<div class="wrapper" page="selectedPage" beforeMove="beforeMove(index)" afterMove="beforeMove(index)">    
-    <section class="pages">
-       <div class="text-slider">
-           <div class="cycle-slideshow" data-cycle-fx="scrollHorz" data-cycle-slides="> div">
-            <div class="cycle-text">
-                <div>
-                    <p>Arul institute</p>
-                    <p>ground for excellence</p>
+<div id="parentNode" class="wrapper" page="selectedPage" beforeMove="beforeMove(index)"
+     afterMove="beforeMove(index)">
+    <section id="home" class="pages">
+        <div class="text-slider">
+            <div class="cycle-slideshow" data-cycle-fx="scrollHorz" data-cycle-slides="> div">
+                <div class="cycle-text">
+                    <div>
+                        <p>Arul institute</p>
+
+                        <p>ground for excellence</p>
+                    </div>
+                </div>
+                <div class="cycle-text">
+                    <div>
+                        <p>Education is not the learning of facts</p>
+
+                        <p>but the training of the mind to think</p>
+                    </div>
+                </div>
+                <div class="cycle-text">
+                    <div>
+                        <p>Confidence and hard work is the best</p>
+
+                        <p>medicine to kill the disease called failure</p>
+                    </div>
+                </div>
+                <div class="cycle-text">
+                    <div>
+                        <p>Text line one</p>
+
+                        <p>text line three and next</p>
+                    </div>
+                </div>
+                <div class="cycle-text">
+                    <div>
+                        <p>Sample text</p>
+
+                        <p>text line three and next</p>
+                    </div>
                 </div>
             </div>
-            <div class="cycle-text">
-                <div>
-                    <p>Education is not the learning of facts</p>
-                    <p>but the training of the mind to think</p>
-                </div>
-            </div>
-            <div class="cycle-text">
-                <div>
-                    <p>Confidence and hard work is the best</p>
-                    <p>medicine to kill the disease called failure</p>
-                </div>
-            </div>
-            <div class="cycle-text">
-                <div>
-                   <p>Text line one</p>
-                   <p>text line three and next</p>
-               </div>
-           </div>
-           <div class="cycle-text">
-               <div>
-                   <p>Sample text</p>
-                   <p>text line three and next</p>
-               </div>
-           </div>
-       </div>
-   </section>
-   <section class="pages">Page2</section>
-   <section class="pages">Page3</section>
-   <section class="pages">Page4</section>
-   <section class="pages">Page5</section>
-   <section class="pages">Page6</section>
+        </div>
+    </section>
+    <section id="about" class="pages">Page2</section>
+    <section id="page3" class="pages">Page3</section>
+    <section id="page4" class="pages">Page4</section>
+    <section id="page5" class="pages">Page5</section>
+    <section id="page6" class="pages">Page6</section>
 </div>
+
+
 <script src="js/jquery-1.7.1.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/angular.min.js"></script>    
+<script src="js/jquery.fullPage.min.js"></script>
 <script src="js/jquery.cycle2.js"></script>
 <script src="js/jquery.onepage-scroll.min.js"></script>
+
+<script src="js/bootstrap.min.js"></script>
+
+<!--<script src="js/angular.min.js"></script>
+<script src="js/angular-ui-router/release/angular-ui-router.js"></script> -->
+
 <script src="app.js"></script>
 </body>
 </html>

@@ -1,1 +1,1 @@
-include ':app', ':site', ':old site'
+include ':app', ':site', ':old site', ':site_angular'

@@ -1,0 +1,237 @@
+body{
+  background-color:black;
+}
+//GRAY BACKGROUND
+.scroll-content{
+  background-color:$gray-light;
+}
+
+//SCROLL PADDING TO COMPENSTATE FOR THE SHRINKING HEADER
+.main-scroll {
+  top: 20px !important;
+  bottom: 0 !important;
+  padding-top: 34px !important;
+}
+
+
+//GLOBAL LINK COLORS
+a:link,
+a:visited,
+a:hover,
+a:active {
+	color: black;
+}
+
+.dark-bg {
+  font-family:"abchanel-couture",sans-serif;
+  background-color: black;
+  color: white;
+  
+  .chanel-skinny-small-button,
+  .chanel-skinny-small-white-button,
+  .chanel-small-button,
+  .chanel-small-white-button,
+  .chanel-like-button,
+  .chanel-like-white-button,
+  .chanel-follow-button,
+  .chanel-follow-white-button,
+  .chanel-large-button,
+  .chanel-large-white-button {
+	  border-color: white !important;
+  }
+  
+  a:link,
+  a:visited,
+  a:hover,
+  a:active {
+	color: white;
+  }
+  
+  .scroll-content {
+	font-size:10;
+    background-color: black;
+  }
+  
+}
+
+.light-bg {
+  // font-family:"abchanel-couture",sans-serif;
+  background-color: white;
+  color: black;
+  
+  .chanel-skinny-small-button,
+  .chanel-skinny-small-white-button,
+  .chanel-small-button,
+  .chanel-small-white-button,
+  .chanel-like-button,
+  .chanel-like-white-button,
+  .chanel-follow-button,
+  .chanel-follow-white-button,
+  .chanel-large-button,
+  .chanel-large-white-button {
+	  border-color: black !important;
+  }
+  
+  a:link,
+  a:visited,
+  a:hover,
+  a:active {
+	color: black;
+  }
+}
+
+.verticalAlign {
+    vertical-align: super;
+}
+
+.inline-display {
+	i {
+	 	font-size: 30px;
+	}
+	
+    display: inline;
+}
+
+.light-padding {
+	padding: 0 0.5rem 0 0.5rem;
+}
+
+.strong-padding {
+	padding: 0 3rem 0 3rem;
+}
+
+.padding{
+  padding:1rem;
+}
+
+.no-padding {
+  padding: 0px !important;
+}
+
+.left, .right {
+  width: 50%; /* Floated elements technically need a width specified. */
+}
+
+.left {
+  float: left;
+   text-align: left;
+}
+
+.right {
+  float: right;
+   text-align: right;
+}
+
+.overflow-visible {
+	overflow: visible;
+}
+
+//PROFILE
+.my-profile-section{
+	margin-bottom: 1rem;
+	display:block;
+	
+	div.list {
+		padding-left:0px !important;
+	}
+	
+	.item {
+		padding-left:0px;
+		margin-left:0px;
+	}
+	
+	.list:last-child{
+		padding: 0px 0 5px 16px;
+		margin-bottom: 1rem;
+
+	}
+}
+
+.member-profile-section{
+
+	display:block;
+	margin-bottom: 1.5rem;
+}
+
+.profile-name,
+.member-profile-name {
+	font-size:1.1rem;
+	margin-bottom:0.6rem;
+	//float: right;
+    text-align: left;
+}
+
+.profile-details,
+.profile-details-edit,
+.member-profile-details  {
+	font-size:0.8rem;
+	line-height: 120%;
+	//float: right;
+    text-align: left;
+
+	p {
+		margin: 0;
+	}
+	
+	p.text-truncate {
+		overflow: hidden;
+	  	text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+	
+	a:link,
+	a:visited,
+	a:hover,
+	a:active {
+	    color: black;
+	}
+}
+
+.profiles-followed-list{
+	 .item-avatar .item-content {
+	 	padding-left: 3rem;
+	 }
+	 
+	 .item h3 {
+		 margin:0px;
+	 }
+	
+	.item-avatar .item-content > img:first-child{
+		left: 0px;
+		max-width: 3.3rem;
+		max-height: 3.6rem;
+	}
+}
+
+.member-list > .list {
+	margin-left: -1rem;
+	margin-right: -1rem;
+	
+	.item.item-divider {
+
+		border-top: 1px $gray solid;
+		border-bottom: 1px $gray solid;
+		background-color: white;
+		padding-top: 1rem;
+		padding-bottom: 0.7rem;
+		margin-bottom: 1px;
+		height: 3rem;
+	}
+	
+	.item.item-input.item-member {
+		border: 0px;
+		padding: 7px;
+		height: 1.4rem;
+	}
+}
+
+//CODE OF CONDUCT
+.scroll-content.code-of-conduct {
+  background-color:white;
+}
+
+//GLOBAL BACKDROP
+.backdrop{
+  background-color:rgba(0,0,0, 0.5);
+}
+

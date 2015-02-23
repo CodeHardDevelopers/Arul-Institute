@@ -1,4 +1,21 @@
-angular.module('app', []);
+/*angular.module('app', ['ui.router']);
+
+
+
+angular.module('app').config(function($stateProvider){
+    $stateProvider
+
+            //Home Page
+            .state('home', {
+                url: '/home',
+                templateUrl: 'modules/home/templates/home.html',
+                controller: 'HomeCtrl'
+            })
+});
+
+
+
+
 angular.module('app').controller('HeaderController', ['$rootScope', '$timeout', '$location', function ($rootScope, $timeout, $location) {
     var self = this;
     self.navigated = false;
@@ -39,62 +56,10 @@ angular.module('app').controller('HeaderController', ['$rootScope', '$timeout', 
         selected: false
     }];
 
-    function init() {
-        var page = $location.path().split('/')[1];
-        if (page === undefined) {
-            self.navigators[0].selected = true;
-        } else {
-            angular.forEach(self.navigators, function (nav) {
-                if (nav.page == page) {
-                    self.moveTo(nav);
-                }
-            });
-        }
-    }
-
-    $rootScope.$on("page:changed", function (event, args) {
-        self.navigated = args > 1;
-
-        angular.forEach(self.navigators, function (nav) {
-            nav.selected = nav.index == args;
-
-            if (nav.selected) $location.path(nav.page);
-        });
-    });
-
-    self.moveTo = function (nav) {
-        $timeout(function () {
-            $rootScope.$broadcast("page:moveTo", nav.index);
-        });
-    };
-
-    init();
 }]).controller('PageController', ['$rootScope', '$scope', '$timeout', function ($rootScope, $scope, $timeout) {
     $scope.selectedPage = 0;
     $scope.prevPage = 0;
 
-    function action(index) {
-        $timeout(function () {
-            $rootScope.$broadcast("page:changed", index);
-        });
-    }
-
-    $scope.beforeMove = function (index) {
-        if ($scope.prevPage < index) {
-            action(index);
-        }
-    };
-
-    $scope.afterMove = function (index) {
-        if ($scope.prevPage > index) {
-            action(index);
-        }
-    };
-
-    $rootScope.$on("page:moveTo", function (event, args) {
-        $scope.prevPage = $scope.selectedPage;
-        $scope.selectedPage = args;
-    });
 }]).directive('wrapper', ['$rootScope', function ($rootScope) {
     return {
         restrict: 'C',
@@ -105,6 +70,7 @@ angular.module('app').controller('HeaderController', ['$rootScope', '$timeout', 
             afterMove: '&',
         },
         link: function (scope, element, attrs) {
+        /*
             scope.$watch("selectedPage", function (a, b) {
                 if (a != b) {
                     $(element).moveTo(a);
@@ -118,6 +84,26 @@ angular.module('app').controller('HeaderController', ['$rootScope', '$timeout', 
                 beforeMove: scope.beforeMove,
                 afterMove: scope.afterMove,
             });
+
+            angular.element(document).ready(function(){
+                $(element).fullpage({
+                    sectionSelector: '.pages',
+                    menu: '#menu',
+                    anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage']
+                });
+            });
+
+
         }
     };
 }]);
+
+*/
+
+$(document).ready(function(){
+                $("#parentNode").fullpage({
+                    sectionSelector: '.pages',
+                    menu: '#menu',
+                    anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage']
+                });
+            });

@@ -1,0 +1,28 @@
+<br/>
+<br/>
+<div style="width:70%;margin:auto">
+
+	<accordion ng-if="gotResponse">
+		<accordion-group heading="{{object.name}}" is-open="true">		    
+		    <div ng-include="'tree_item_renderer.html'">
+		    </div>
+    </accordion-group>
+	</accordion>
+
+  <h3 ng-if="! gotResponse">Loading....</h3>
+
+</div>
+
+<script type="text/ng-template"  id="tree_item_renderer.html">    
+    <accordion>        
+      <accordion-group heading="{{object.name}}" ng-repeat="object in object.nodes" >		    
+  	    <div ng-include="'tree_item_renderer.html'">
+  	    </div>
+      </accordion-group>
+	    <h3><a style="display:block;" ng-href="{{leaf.object.mediaLink}}" ng-repeat="leaf in object.leafs"> {{leaf.name}}<a></h3>
+
+      <h3 ng-show="(object.leafs.length == 0 && object.nodes.length == 0)"> Folder is Empty! </h3>
+    </accordion>
+</script>
+
+
