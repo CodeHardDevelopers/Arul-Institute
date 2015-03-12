@@ -15,7 +15,9 @@ angular.module('ArulInstitute', ['ngResource',
     'ArulInstitute.courses',
     'ArulInstitute.instructions',
     'ArulInstitute.materials',
-    'ArulInstitute.contact'
+    'ArulInstitute.contact',
+    'ArulInstitute.toppers',
+    'ArulInstitute.testimonials'
     ])
 
     .config(config);
@@ -73,6 +75,30 @@ function config($stateProvider, $urlRouterProvider) {
                 'mainContent': {
                     templateUrl: 'modules/materials/templates/materials.html',
                     controller: 'MaterialsCtrl'
+                }
+            }             
+        })
+
+
+        //Testimonials        
+        .state('testimonials', {
+            url: '/testimonials',
+            views: {                
+                'mainContent': {
+                    templateUrl: 'modules/testimonials/templates/testimonials.html',
+                    controller: 'TestimonialsCtrl'
+                }
+            }             
+        })
+
+
+        //Toppers        
+        .state('toppers', {
+            url: '/toppers',
+            views: {                
+                'mainContent': {
+                    templateUrl: 'modules/toppers/templates/toppers.html',
+                    controller: 'ToppersCtrl'
                 }
             }             
         })
