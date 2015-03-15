@@ -44,7 +44,7 @@ a[href], input[type='submit'], input[type='image'], label[for], select, button, 
   vertical-align: middle;
 }
 
-header, header .title, header .title p, header .header-nav ul li a {
+header, header .title, header .title p, header .header-nav ul li a, .wrapper .content-section .tab-content ul li, .wrapper .content-section .nav a {
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   -ms-transition: all 0.2s ease-in-out;
@@ -52,7 +52,7 @@ header, header .title, header .title p, header .header-nav ul li a {
   transition: all 0.2s ease-in-out;
 }
 
-header .header-nav ul li {
+header .header-nav ul li, .wrapper .content-section .tab-content ul li {
   display: -moz-inline-stack;
   display: inline-block;
   vertical-align: middle;
@@ -67,6 +67,10 @@ html, html body, .wrapper, .wrapper .pages, .wrapper .pages:first-child > .text-
 
 header, header .header-nav, .index-background, .index-background .cycle-slideshow .cycle-image:before, .wrapper .pages:first-child > .text-slider, .wrapper .pages:first-child > .text-slider .cycle-slideshow .cycle-text > div {
   position: absolute;
+}
+
+.wrapper .content-section .tab-content ul li {
+  cursor: pointer;
 }
 
 html, html body {
@@ -146,7 +150,7 @@ header .title p {
   font-size: 20px;
   font-size: 1.25rem;
   font-weight: 400;
-  color: #F2B199;
+  color: #79D2FA;
   padding-left: 5px;
 }
 header .header-nav {
@@ -176,11 +180,10 @@ header .header-nav ul li a.selected {
   background: rgba(0, 0, 0, 0.5);
 }
 header .header-nav ul li a.nav-highlight {
-  background: #F2B199;
-  color: #000;
+  background: #2196F3;
 }
 header .header-nav ul li a:hover {
-  color: #F2B199;
+  color: #79D2FA;
   text-decoration: none;
   background: rgba(0, 0, 0, 0.5);
 }
@@ -219,6 +222,117 @@ header .header-nav ul li a:active {
 
 .wrapper {
   z-index: 1000;
+}
+.wrapper .content-section {
+  padding: 20px 80px;
+}
+.wrapper .content-section .nav-crumb .fa {
+  position: relative;
+  top: 7px;
+  left: 16px;
+  color: #CFCFCF;
+}
+.wrapper .content-section .nav-crumb .breadcrumb {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  margin: 0 0 0 10px;
+  background: #fff;
+  font-size: 16px;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 10px;
+}
+.wrapper .content-section .nav-crumb .breadcrumb a {
+  color: #2196F3;
+}
+.wrapper .content-section .nav-crumb .breadcrumb a:hover {
+  text-decoration: none;
+  color: #333;
+}
+.wrapper .content-section .nav-crumb .breadcrumb.active a {
+  color: #777;
+}
+.wrapper .content-section .tab-content {
+  padding: 20px;
+}
+.wrapper .content-section .tab-content ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.wrapper .content-section .tab-content ul li {
+  padding: 10px;
+  margin: 10px;
+  font-weight: 400;
+  font-size: 15px;
+  font-size: 0.9375rem;
+  text-align: center;
+}
+.wrapper .content-section .tab-content ul li .fa {
+  display: block;
+  color: #2196F3;
+  font-size: 60px;
+}
+.wrapper .content-section .tab-content ul li div:last-child {
+  padding-top: 5px;
+}
+.wrapper .content-section .tab-content ul li:hover .fa {
+  color: #333;
+}
+.wrapper .content-section .nav {
+  border: 0;
+}
+.wrapper .content-section .nav .active {
+  border: 0;
+}
+.wrapper .content-section .nav .active a {
+  color: #333;
+  font-weight: 600;
+}
+.wrapper .content-section .nav a {
+  border: 0;
+  color: #2196F3;
+  border-radius: 0;
+  font-weight: 400;
+  font-size: 18px;
+  font-size: 1.125rem;
+}
+.wrapper .content-section .nav a .fa {
+  display: none;
+  padding-right: 5px;
+}
+.wrapper .content-section .nav a:hover {
+  color: #333;
+  background: #fff;
+}
+.wrapper .content-section .nav a:hover, .wrapper .content-section .nav a:focus {
+  border: 0;
+}
+.wrapper .title-section {
+  padding: 40px 80px;
+  background: #2196F3;
+  color: #fff;
+}
+.wrapper .title-section h2 {
+  margin: 0;
+}
+.wrapper .title-section h2 .fa {
+  padding-right: 10px;
+}
+.wrapper .title-section h2 span {
+  font-size: 18px;
+  font-size: 1.125rem;
+  color: #9DE1FF;
+  position: relative;
+  left: 5px;
+  bottom: 3px;
+}
+.wrapper .pages.content-page {
+  padding-top: 70px;
 }
 .wrapper .pages:not(:first-child) {
   background: #fff;
