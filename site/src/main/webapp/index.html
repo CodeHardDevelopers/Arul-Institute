@@ -4,42 +4,44 @@
 <head>
     <meta charset="utf-8">
     <title>Arul Institute</title>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400,300,700,600' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400,300,700,600|Roboto+Slab:300,400' rel='stylesheet' type='text/css'>
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
     <link rel=stylesheet href="css/bootstrap.min.css">
-    <link rel=stylesheet href="css/font-awesome.min.css">
-    <link rel=stylesheet href="css/onepage-scroll.css">
+    <link rel=stylesheet href="css/font-awesome.min.css">   
     <link rel=stylesheet href="css/layout.css">
 </head>
 
 <body>
     <header id="header" ng-controller="HeaderController as hCtrl" ng-class="{navigated: hCtrl.navigated}">
-        <div class="title">
-            <div>@rul Institute</div>
-            <p>ground for excellence</p>
-        </div>
-        <div class="header-nav">
-            <ul>
-                <li ng-repeat="nav in hCtrl.navigators track by nav.index">
-                    <a ng-click="hCtrl.moveTo(nav)" ng-class="{'nav-highlight': nav.highlight, selected: nav.selected}" href="#{{nav.page}}" ng-bind="nav.page"></a>
-                </li>
-            </ul>
+        <div class="header-content">
+            <div class="title">
+                <div><span class="ui-bold">@</span>rul Institute</div>
+                <p>ground for excellence</p>
+            </div>
+            <div class="header-nav">
+                <ul>
+                    <li ng-repeat="nav in hCtrl.navigators track by nav.index">
+                        <a ng-click="hCtrl.moveTo(nav)" ng-class="{'nav-highlight': nav.highlight, selected: nav.selected}" href="#{{nav.page}}" ng-bind="nav.page"></a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </header>
-    <!-- /header -->
-    <div class="index-background">
-        <div class="cycle-slideshow" data-cycle-slides="> div">
-            <div class="cycle-image img-1"></div>
-            <div class="cycle-image img-2"></div>
-            <div class="cycle-image img-3"></div>
-            <div class="cycle-image img-4"></div>
-            <div class="cycle-image img-5"></div>
-        </div>
-    </div>
-    <div class="wrapper" page="selectedPage" beforeMove="beforeMove(index)" afterMove="beforeMove(index)">
-        <section class="pages">
+    <!-- /header -->   
+
+    <div class="page index-page">
+        <div class="page-content">
+            <div class="background-slider">
+                <div class="cycle-slideshow" data-cycle-slides="> div">                
+                    <div class="cycle-image img-1"></div>
+                    <div class="cycle-image img-2"></div>
+                    <div class="cycle-image img-3"></div>
+                    <div class="cycle-image img-4"></div>
+                    <div class="cycle-image img-5"></div>
+                </div>
+            </div>
             <div class="text-slider">
-                <div class="cycle-slideshow" data-cycle-fx="scrollHorz" data-cycle-slides="> div">
+                <div class="cycle-slideshow"  data-cycle-fx="scrollHorz" data-cycle-slides="> div">
                     <div class="cycle-text">
                         <div>
                             <p>Arul institute</p>
@@ -60,70 +62,94 @@
                     </div>
                     <div class="cycle-text">
                         <div>
-                            <p>Text line one</p>
-                            <p>text line three and next</p>
-                        </div>
-                    </div>
-                    <div class="cycle-text">
-                        <div>
-                            <p>Sample text</p>
-                            <p>text line three and next</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="pages content-page">Page2</section>
-        <section class="pages content-page">Page3</section>
-        <section class="pages content-page">Page4</section>
-        <section class="pages content-page">
-            <div>
-                <div class="title-section">
-                 <h2><i class="fa fa-book"></i> Materials <span>  some text about materials</span></h2>
+                         <p>Text line one</p>
+                         <p>text line three and next</p>
+                     </div>
+                 </div>
+                 <div class="cycle-text">
+                     <div>
+                         <p>Sample text</p>
+                         <p>text line three and next</p>
+                     </div>
+                 </div>
              </div>
-             <div class="content-section">
-                 <div>
-                     <div role="tabpanel">
-                      <ul class="nav nav-tabs" role="tablist">
-                        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab"><i class="fa fa-tags"></i> Tenth Standard</a></li>
-                        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-tags"></i> Eleventh Standard</a></li>
-                        <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab"><i class="fa fa-tags"></i> Twelfth Standard</a></li>                       
-                    </ul>
-                    <div class="nav-crumb">
-                        <i class="fa fa-chevron-right"></i>
-                        <ol class="breadcrumb">
-                          <li><a href="#">Tenth Standard</a></li>
-                          <li><a href="#">Keys</a></li>
-                          <li class="active">2015</li>
-                      </ol>
-                  </div>
-                  <div class="tab-content">
-                    <div role="tabpanel" class="tab-pane fade in active" id="home">
-                        <div>
-                            <ul>
-                                <li><div class="fa fa-folder-open"></div><div>Physics</div></li>
-                                <li><div class="fa fa-folder-open"></div><div>Chemistry</div></li>  
-                                <li><div class="fa fa-folder-open"></div><div>Maths</div></li>
-                                <li><div class="fa fa-file-text"></div><div>Volume 1</div></li>
-                                <li><div class="fa fa-file-text"></div><div>Volume 2</div></li>                                                                       
-                            </ul>
-                        </div>
-                    </div>
-                    <div role="tabpanel" class="tab-pane fade" id="profile">...</div>                       
-                </div>
 
-            </div>
+
+
+         </div>
+
+     </div>
+
+     <div class="index-content">
+         <div class="index-wrapper">
+             <div class="feature-text">
+                 <div class="row">
+                     <div class="col-md-4 feature-box">
+                         <div class="text-center"><i class="fa fa-check"></i></div>
+                         <h4>Proven Track Record</h4>
+                         Our students have been consistently achieving top marks with distinction
+                     </div>
+
+                     <div class="col-md-4 feature-box">
+                         <div class="text-center"><i class="fa fa-video-camera"></i></div>
+                         <h4>Audio / Video Coaching</h4>
+                         Classes are conducted with sufficient audio/video illustrations wherever possible to explan the concepts clearly
+                     </div>
+                     <div class="col-md-4 feature-box">
+                       <div class="text-center"><i class="fa fa-file-text-o"></i></div>
+                       <h4>Weekly Tests</h4>
+                       Tests every week remove the fear, tension and time management problems that the students have when theey come to us
+                   </div>
+               </div>
+               <div class="row">
+                <div class="col-md-4 feature-box">
+                   <div class="text-center"><i class="fa fa-user"></i></div>
+                   <h4>Easily Approachable Staff</h4>
+                   Parents can meet the staff personally upon prior intimation to discuss about their ward's performance
+               </div>
+               <div class="col-md-4 feature-box">
+                   <div class="text-center"><i class="fa fa-comments-o"></i></div>
+                   <h4>Regular Feedback</h4>
+                   Marks details and test attendance of the student is intimated through SMS every week to the parents
+               </div>
+               <div class="col-md-4 feature-box">
+                   <div class="text-center"><i class="fa fa-thumbs-o-up"></i></div>
+                   <h4>College Counselling</h4>
+                   Counselling is given for students on their college and course selection
+               </div>
+           </div>
+       </div>
+
+       <div class="content-large-title bottom-arrow-border"><i class="fa fa-history"></i>About</div>
+       <div class="about-text">
+         <p>Arul Institute, a pioneer in supplementary education, is renowned for having trained most of the school toppers in south chennai over the last 20 years. They have an intensive, result oriented training programme for 10th training programmes are becoming indispensable to all those students aspiring to study engineering or medicine. As most students aspire for a centum in the core subjects, a thorough understanding of the concepts and extensive training in writing skills has become mandatory. The institute strives to fulfill the aspirations of the students by providing them a thorough understanding of the core subjects and the much needed practice tests. At Arul Institute, learning is made easy and enjoyable by adopting audio-visual methodology with suitable video clippings for teaching the core subjects. A projector is used for the classes where the book is saved in pdf format and all the important questions that had appeared in the public exam till date are explained in detail. This helps even the below average students to focus on the important questions for a better output. With a view to make available the best coaching even to the economically weaker section of the society, Arul Institute offers a wide range of scholarship for meritorious students. The scholarship is based on their performance in the weekly tests. Every year over 200 students were given scholarship assistance. Apart from this, full refund of tuition fees is given to those who appear regularly for weekly tests and maintain a minimum average of 90 percent.</p>
+     </div>
+
+     <div class="content-large-title bottom-arrow-border"><i class="fa fa-history"></i>Our History</div>
+     <div class="about-text">
+         <p>Since 1991, we have been conducting an intensive & structured coaching programme for 10th, +1 and +2 and Engineering / Medical Entrance. Our classes are designed to provide a deep insight of the subjects and the much needed practice to extract the best performance out of our students. Our results in the past reflect our successful performance. many of our students have done exceedingly well in their board & entrance exams and have joined professional streams in prestigious institutions like Chennai Medical College, Kilpauk Medical College, Stanley Medical College, Bits Pilani, Anna University, NITs and other exteemed Medcial and Engineering Colleges/p>
+         </div>
+         <div class="content-large-title bottom-arrow-border"><i class="fa fa-bullseye"></i>Our Goals</div>
+         <div class="about-text">             
+             <ul>
+                <li><i class="fa fa-check"></i>To empower the students with extensive knowledge to confront the future</li>
+                <li><i class="fa fa-check"></i>To empower students using the vast experience of our expert faculty</li>
+                <li><i class="fa fa-check"></i>To help the student have a thorough understanding of the concepts and the subject</li>
+                <li><i class="fa fa-check"></i>To teach the concepts clearly using multimedia enabled classtooms</li>
+                <li><i class="fa fa-check"></i>To increase the confidence of the students by conducting weekly tests</li>
+                <li><i class="fa fa-check"></i>To motivate you to pursue your studies with more vigour</li>
+                <li><i class="fa fa-check"></i>To help boost your morale and orient you towards curriculum by conducting psychology sessions</li>
+            </ul>
         </div>
     </div>
 </div>
-</section>
-<section class="pages content-page">Page6</section>
 </div>
+</div> 
+
 <script src="js/jquery-1.7.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/angular.min.js"></script>
 <script src="js/jquery.cycle2.js"></script>
-<script src="js/jquery.onepage-scroll.min.js"></script>
 <script src="app.js"></script>
 </body>
 
