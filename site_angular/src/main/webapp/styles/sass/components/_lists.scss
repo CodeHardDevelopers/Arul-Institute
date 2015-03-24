@@ -1,0 +1,50 @@
+
+.list .item {
+	border: 0px;
+}
+
+.item-title {
+	margin: 2px 0 0 0 !important;
+	padding: 14px 0 0 0 !important;
+}
+
+.list-member-name{
+  margin-bottom:3px;
+  padding-top:4px;
+}
+
+
+.profiles-followed-list{
+  .item-icon-right .icon::before{
+    font-size:1.2rem;
+  }
+}
+
+.login-list {
+	background-color:black;
+	border:0px;
+	
+	.item.login-item {
+		background-color:black;
+		border:0px;
+		padding: 7px;
+		overflow: initial;
+		white-space: initial;
+	}
+	
+	.login-label {
+	  font-family: $chanel-font-content;
+	  background-color:black;
+	  font-size: 0.8rem;
+	  color: white;
+	  padding-top: 0;
+	  padding-bottom: 0;
+	  margin: 0;
+	}
+}
+
+.item.item-input.item-keyword {
+	border: 0px;
+	padding: 7px;
+	height: 28px;
+}

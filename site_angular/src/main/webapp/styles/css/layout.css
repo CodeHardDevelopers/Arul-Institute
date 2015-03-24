@@ -1,0 +1,250 @@
+/*** sass functions includes extends ***/
+/*** end ***/
+/*** sass variables ***/
+/*** end ***/
+::-moz-selection {
+  background-color: #FFA;
+  color: #000;
+}
+
+::selection {
+  background-color: #FFA;
+  color: #000;
+}
+
+a[href], input[type='submit'], input[type='image'], label[for], select, button, .pointer {
+  cursor: pointer;
+  outline: 0;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  display: none;
+}
+
+::-webkit-scrollbar-track-piece {
+  background-color: #fff;
+  border: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #fff;
+  border: none;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #fff;
+}
+
+.align-top {
+  vertical-align: top;
+}
+
+.align-middle {
+  vertical-align: middle;
+}
+
+header, header .title, header .title p, header .header-nav ul li a {
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+header .header-nav ul li {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+}
+
+html, html body, .wrapper, .wrapper .pages, .wrapper .pages:first-child > .text-slider .cycle-slideshow, .wrapper .pages:first-child > .text-slider .cycle-slideshow .cycle-text {
+  position: relative;
+}
+
+header, header .header-nav, .index-background, .index-background .cycle-slideshow .cycle-image:before, .wrapper .pages:first-child > .text-slider, .wrapper .pages:first-child > .text-slider .cycle-slideshow .cycle-text > div {
+  position: absolute;
+}
+
+html, html body {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  -o-user-select: text;
+  user-select: text;
+}
+
+html, html body, header, .index-background, .index-background .cycle-slideshow, .index-background .cycle-slideshow .cycle-image, .index-background .cycle-slideshow .cycle-image:before, .wrapper, .wrapper .pages, .wrapper .pages:first-child > .text-slider, .wrapper .pages:first-child > .text-slider .cycle-slideshow, .wrapper .pages:first-child > .text-slider .cycle-slideshow .cycle-text {
+  width: 100%;
+}
+
+.full-height, .ui-mobile [data-role=page], html, html body, .index-background, .index-background .cycle-slideshow, .index-background .cycle-slideshow .cycle-image, .index-background .cycle-slideshow .cycle-image:before, .wrapper, .wrapper .pages, .wrapper .pages:first-child > .text-slider, .wrapper .pages:first-child > .text-slider .cycle-slideshow, .wrapper .pages:first-child > .text-slider .cycle-slideshow .cycle-text {
+  height: 100%;
+}
+
+header, .wrapper .pages:first-child > .text-slider {
+  overflow: hidden;
+}
+
+html {
+  overflow: auto;
+}
+html, html body {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  background: #000;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-animation-delay: 0.1s;
+  -webkit-animation-name: fontfix;
+  -webkit-animation-duration: 0.1s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: linear;
+}
+
+h1, h2, h3 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+}
+
+h4, h5, h6 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+}
+
+header {
+  z-index: 1010;
+  height: 100px;
+}
+header.navigated {
+  background: #353434;
+  height: 75px;
+}
+header.navigated .title {
+  padding-top: 5px;
+}
+header.navigated .title p {
+  opacity: 0;
+}
+header .title {
+  padding: 15px 0 0 80px;
+}
+header .title div {
+  font-size: 40px;
+  font-size: 2.5rem;
+  font-weight: 200;
+  color: #fff;
+  text-shadow: 1px 1px 2px #1B1B1B;
+}
+header .title p {
+  font-size: 20px;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #F2B199;
+  padding-left: 5px;
+}
+header .header-nav {
+  top: 50%;
+  right: 80px;
+  margin-top: -22px;
+}
+header .header-nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+header .header-nav ul li {
+  font-size: 18px;
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+header .header-nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 16px;
+  margin-left: 5px;
+  display: block;
+  border-radius: 3px;
+}
+header .header-nav ul li a.selected {
+  background: rgba(0, 0, 0, 0.5);
+}
+header .header-nav ul li a.nav-highlight {
+  background: #F2B199;
+  color: #000;
+}
+header .header-nav ul li a:hover {
+  color: #F2B199;
+  text-decoration: none;
+  background: rgba(0, 0, 0, 0.5);
+}
+header .header-nav ul li a:active {
+  color: #A3715E;
+}
+
+.index-background .cycle-slideshow .cycle-image {
+  background-size: cover;
+}
+.index-background .cycle-slideshow .cycle-image:before {
+  background: #000;
+  opacity: 0.7;
+  content: "";
+  z-index: 101;
+}
+.index-background .cycle-slideshow .cycle-image.img-1 {
+  background-image: url(../../images/stock/1.jpg);
+}
+.index-background .cycle-slideshow .cycle-image.img-2 {
+  background-image: url(../../images/stock/2.jpg);
+}
+.index-background .cycle-slideshow .cycle-image.img-3 {
+  background-image: url(../../images/stock/3.jpg);
+}
+.index-background .cycle-slideshow .cycle-image.img-4 {
+  background-image: url(../../images/stock/4.jpg);
+}
+.index-background .cycle-slideshow .cycle-image.img-5 {
+  background-image: url(../../images/stock/5.jpg);
+}
+
+.onepage-pagination {
+  z-index: 1010;
+}
+
+.wrapper {
+  z-index: 1000;
+}
+.wrapper .pages:not(:first-child) {
+  background: #fff;
+}
+.wrapper .pages:first-child > .text-slider {
+  overflow: hidden;
+}
+.wrapper .pages:first-child > .text-slider .cycle-slideshow .cycle-text {
+  opacity: 0;
+}
+.wrapper .pages:first-child > .text-slider .cycle-slideshow .cycle-text.cycle-slide-active {
+  opacity: 1;
+}
+.wrapper .pages:first-child > .text-slider .cycle-slideshow .cycle-text > div {
+  top: 50%;
+  left: 15vmin;
+  margin-top: -20vmin;
+  z-index: 300;
+}
+.wrapper .pages:first-child > .text-slider .cycle-slideshow .cycle-text p {
+  color: #333;
+  font-size: 6vmin;
+  font-weight: 100;
+  padding: 5px 17px;
+  display: inline-block;
+  float: left;
+  clear: left;
+  background: rgba(255, 255, 255, 0.8);
+}

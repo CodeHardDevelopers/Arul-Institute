@@ -1,0 +1,71 @@
+
+
+//MAIN NAVIGATION
+.main-navigation{
+  font-family:$chanel-font-title;
+  text-align: right;
+}
+
+.main-explore{
+  font-family:$chanel-font-title;
+  text-align: left;
+}
+
+$menu-dark-color: #000000;
+$menu-light-color: #FFFFFF;
+
+.menu-dark-bg {
+  background-color: $menu-dark-color !important;
+  color: $menu-light-color;
+  padding-top:1.25rem;
+
+  .scroll-content {
+    background-color: $menu-dark-color !important;
+  }
+  
+  .item.active,
+  .item.activated,
+  .item-complex.active .item-content,
+  .item-complex.activated .item-content, 
+  .item .item-content.active, 
+  .item .item-content.activated{
+	 padding: 6px !important;
+	 border: none;
+	 
+     a span{
+   	    background-color: $menu-light-color !important;
+        color: $menu-dark-color;
+     }
+  }
+  
+  .item,
+  .item-complex .item-content, 
+  .item-radio .item-content {
+    background-color: $menu-dark-color !important;
+    border: none;
+    padding: 6px !important;
+    color: $menu-light-color;
+  }
+  a span{
+	background-color: transparent !important;
+    color: $menu-light-color;
+	
+  }
+  
+  .box{
+   	   box-sizing: border-box;
+       width: auto;
+       float:right;
+	}
+  
+}
+
+.menu-dark-bg .item.active a span,
+.menu-dark-bg .item a span{
+  padding:0 0.5rem;
+}
+
+.user-name{
+  font-family:$chanel-font-content;
+  text-align: right;
+}

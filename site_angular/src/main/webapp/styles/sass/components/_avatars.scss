@@ -1,0 +1,51 @@
+
+//AVATARS
+.item-avatar > img, .item-avatar > img:first-child, .item-avatar .item-content > img:first-child{
+  border-radius:0px;
+}
+
+.item.item-avatar {
+	border:0px;
+}
+
+.profile-avatar {
+	width: 7.3rem;
+	height: 7.3rem;
+    float: left;
+    text-align: left;
+	padding-right: 0.75rem;
+	padding-bottom: 1rem;
+}
+
+.profile-avatar-container {
+	width: 6.3rem;
+	height: 6.3rem;
+    float: left;
+    text-align: left;
+	padding-right: 0.75rem;
+	padding-bottom: 1rem;
+}
+
+.member-profile-avatar {
+	width:inherit;
+	height:inherit;
+	padding: inherit;
+}
+
+.profile-avatar-edit {
+	width: 4.5rem;
+	height: 4.5rem;
+    float: left;
+    text-align: left;
+	padding-right: 0.75rem;
+	padding-bottom: 1rem;
+	
+	i {
+		position: absolute;
+		top: 2px;
+		right: 16px;
+		z-index: 10;
+		background-color: rgba(255, 255, 255, 0.5);
+		padding: 3px 8px;
+	}
+}
