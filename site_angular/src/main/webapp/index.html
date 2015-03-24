@@ -1,116 +1,83 @@
 <!DOCTYPE html>
 <html>
-<!-- <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title>Arul Institute</title>    
-
-    <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap-theme.css">
-    
-    <link rel="stylesheet" href="styles/css/style.css">
-    <link rel="stylesheet" href="styles/css/font-awesome.min.css">
-</head>
--->
-
-<head>
-    <meta charset="utf-8">
-    <title>Arul Institute</title>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400,300,700,600|Roboto+Slab:300,400' rel='stylesheet' type='text/css'>
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.css">
-    <!-- <link rel=stylesheet href="css/bootstrap.min.css"> -->
-    <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">   
-    <link rel="stylesheet" href="styles/css/layout.css">    
-</head>
-
-<body>
-
-
-    <header id="header">
-        <div class="header-content">
-            <div class="title">
-                <div><span class="ui-bold">@</span>rul Institute</div>
-                <p>ground for excellence</p>
-            </div>
-            <div class="header-nav">                
-                <ul>
-                    <li><a ui-sref="home" class="active" ui-sref-active="active" >Home</a></li>
-                    <li class="dropdown" dropdown>
-                        <a class="dropdown-toggle" dropdown-toggle >
+    <head>
+        <meta charset="utf-8">
+        <title>Arul Institute</title>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400,300,700,600|Roboto+Slab:300,400' rel='stylesheet' type='text/css'>
+        <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+        <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="styles/css/layout.css">
+    </head>
+    <body bind-scroll>
+        <header id="header">
+            <div class="header-content">
+                <div class="title">
+                    <div><span class="ui-bold">@</span>rul Institute</div>
+                    <p>ground for excellence</p>
+                </div>
+                <div class="header-nav">
+                    <ul>
+                        <li><a ui-sref="home" class="active" ui-sref-active="active" >Home</a></li>
+                        <li class="dropdown" dropdown>
+                            <a class="dropdown-toggle" dropdown-toggle >
                             Courses <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a ui-sref="courses">Twelfth</a></li>
-                            <li><a ui-sref="courses">Eleventh</a></li>
-                            <li><a ui-sref="courses">Tenth Uniform Syllabus</a></li>
-                            <li><a ui-sref="courses">Tenth CBSE Syllabus</a></li>
-                        </ul>
-                    </li>  
-                    <li><a ui-sref="instructions" ui-sref-active="selected">Instructions</a></li>
-                    <li><a ui-sref="materials" ui-sref-active="selected">Materials</a></li>
-                    <li><a ui-sref="toppers" ui-sref-active="selected">Toppers</a></li>
-                    <li><a ui-sref="testimonials" ui-sref-active="selected">Testimonials</a></li>
-                    <li><a ui-sref="contact" ui-sref-active="selected">Contact Us</a></li>
-                </ul>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a ui-sref="courses">Twelfth</a></li>
+                                <li><a ui-sref="courses">Eleventh</a></li>
+                                <li><a ui-sref="courses">Tenth Uniform Syllabus</a></li>
+                                <li><a ui-sref="courses">Tenth CBSE Syllabus</a></li>
+                            </ul>
+                        </li>
+                        <li><a ui-sref="instructions" ui-sref-active="selected">Instructions</a></li>
+                        <li><a ui-sref="materials" ui-sref-active="selected">Materials</a></li>
+                        <li><a ui-sref="toppers" ui-sref-active="selected">Toppers</a></li>
+                        <li><a ui-sref="testimonials" ui-sref-active="selected">Testimonials</a></li>
+                        <li><a ui-sref="contact" ui-sref-active="selected">Contact Us</a></li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </header>
-    <!-- /header -->
-
-    <div ui-view="mainContent"></div>
-
-<script src="lib/jquery/jquery-2.0.3.min.js"></script>
-<script src="lib/jquery/jquery.cycle2.js"></script>
-<script src="lib/bootstrap/js/bootstrap.min.js"></script>
-<script src="lib/angular/angular.js"></script>
-<script src="lib/angular-bootstrap/ui-bootstrap-0.12.0.min.js"></script>
-<script src="lib/angular-animate/angular-animate.js"></script>
-<script src="lib/angular-sanitize/angular-sanitize.js"></script>
-<script src="lib/angular-ui-router/release/angular-ui-router.js"></script>
-<script src="lib/angular-resource/angular-resource.js"></script>
-<script src="lib/jquery/jquery.fullPage.min.js"></script>
-
-<!-- build:js scripts/scripts.js -->
-<script src="scripts/bootstrap-app.js"></script>
-<script src="scripts/app.js"></script>
-<script src="scripts/run.js"></script>
-
-<script src="scripts/directives/cyclePlugin.js"></script>
-
-<script src="modules/home/controllers/home.ctrl.js"></script>
+        </header>
+        <!-- /header -->
 
 
 
-<script src="modules/home/directives/fullpage.drv.js"></script>
+        <div class="page index-page" ui-view="mainContent"></div>
 
 
 
-<script src="modules/courses/controllers/courses.ctrl.js"></script>
+        <script src="lib/jquery/jquery-2.0.3.min.js"></script>
+        <script src="lib/jquery/jquery.cycle2.js"></script>
+        <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+        <script src="lib/angular/angular.js"></script>
+        <script src="lib/angular-bootstrap/ui-bootstrap-0.12.0.min.js"></script>
+        <script src="lib/angular-animate/angular-animate.js"></script>
+        <script src="lib/angular-sanitize/angular-sanitize.js"></script>
+        <script src="lib/angular-ui-router/release/angular-ui-router.js"></script>
+        <script src="lib/angular-resource/angular-resource.js"></script>
+        <script src="lib/jquery/jquery.fullPage.min.js"></script>
 
 
+        <!-- build:js scripts/scripts.js -->
+        <script src="scripts/bootstrap-app.js"></script>
+        <script src="scripts/app.js"></script>
+        <script src="scripts/run.js"></script>
+        <script src="scripts/directives/cyclePlugin.drv.js"></script>
+        <script src="scripts/directives/bindScroll.drv.js"></script>
+        <script src="modules/home/controllers/home.ctrl.js"></script>
+        <script src="modules/home/directives/fullpage.drv.js"></script>
+        <script src="modules/courses/controllers/courses.ctrl.js"></script>
+        <script src="modules/contact/controllers/contact.ctrl.js"></script>
+        <script src="modules/instructions/controllers/instructions.ctrl.js"></script>
+        <script src="modules/materials/controllers/materials.ctrl.js"></script>
+        <script src="modules/materials/services/materials.svc.js"></script>
+        <script src="modules/testimonials/controllers/testimonials.ctrl.js"></script>
+        <script src="modules/toppers/controllers/toppers.ctrl.js"></script>
 
-<script src="modules/contact/controllers/contact.ctrl.js"></script>
-
-
-
-<script src="modules/instructions/controllers/instructions.ctrl.js"></script>
-
-
-
-<script src="modules/materials/controllers/materials.ctrl.js"></script>
-<script src="modules/materials/services/materials.svc.js"></script>
-
-
-
-<script src="modules/testimonials/controllers/testimonials.ctrl.js"></script>
-
-
-
-<script src="modules/toppers/controllers/toppers.ctrl.js"></script>
-
-<script type="text/javascript">
-  app.initialize();
-</script>
-</body>
+        
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+    </body>
 </html>
