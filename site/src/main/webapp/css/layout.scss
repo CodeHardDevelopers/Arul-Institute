@@ -299,6 +299,36 @@ a[href], input[type='submit'], input[type='image'], label[for], select, button, 
     }
 }
 
+@mixin screen-xs {
+    @media (max-width: 767px) {
+        @content;
+    }
+}
+
+@mixin screen-sm {
+    @media (min-width: 768px) and (max-width: 991px) {
+        @content;
+    }
+}
+
+@mixin screen-xs-sm {
+    @media (max-width: 991px) {
+        @content;
+    }
+}
+
+@mixin screen-md {
+    @media (min-width: 992px) and (max-width: 1199px) {
+        @content;
+    }
+}
+
+@mixin screen-lg {
+    @media (min-width: 1200px) {
+        @content;
+    }
+}
+
 $variant-color: #2596F1;
 $variant-light: #25BBF1;
 $accent-color: #333;
@@ -460,7 +490,7 @@ header {
     }
     .feature-text {
         background: #fff;
-        padding: 20px 20px 30px 80px;
+        padding: 20px 80px 30px 80px;
         .row {
             &:not(:last-of-type) {
                 border-bottom: #eaeaea thin solid;
@@ -476,6 +506,7 @@ header {
                 }
                 padding: 10px 40px 30px 40px;
                 text-align: justify;
+                line-height: 30px;
                 h4 {
                     font-family: 'Roboto Slab';
                     @extend %text-center;
@@ -586,5 +617,67 @@ header {
                 }
             }
         }
+    }
+}
+
+@include screen-lg {
+    header {
+        .header-content {
+            padding: 5px 80px;
+        }
+        .header-nav {
+            padding: 25px 80px 5px 0;
+            ul {
+                li {
+                    padding: 15px 15px;
+                    margin-left: 15px;
+                }
+            }
+        }
+    }
+    .page .feature-text {
+        padding: 20px 80px 30px 80px;
+    }
+}
+
+
+@include screen-md {
+    header {
+        .header-content {
+            padding: 5px 20px;
+        }
+        .header-nav {
+            padding: 25px 20px 5px 0;
+            ul {
+                li {
+                    padding: 15px 10px;
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+    .page .feature-text {
+        padding: 20px 80px 30px 80px;
+    }
+}
+
+
+@include screen-xs-sm {
+    header {
+        .header-content {
+            padding: 5px 10px;
+        }
+        .header-nav {
+            padding: 25px 10px 5px 0;
+            ul {
+                li {
+                    padding: 15px 10px;
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+    .page .feature-text {
+        padding: 20px 20px 30px 20px;
     }
 }

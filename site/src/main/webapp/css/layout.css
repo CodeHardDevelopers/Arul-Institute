@@ -250,7 +250,7 @@ header .header-nav ul li a:hover {
 }
 .page .feature-text {
   background: #fff;
-  padding: 20px 20px 30px 80px;
+  padding: 20px 80px 30px 80px;
 }
 .page .feature-text .row {
   max-width: 1260px;
@@ -263,6 +263,7 @@ header .header-nav ul li a:hover {
 .page .feature-text .row .feature-box {
   padding: 10px 40px 30px 40px;
   text-align: justify;
+  line-height: 30px;
 }
 .page .feature-text .row .feature-box .fa {
   color: #2596f1;
@@ -356,4 +357,53 @@ header .header-nav ul li a:hover {
   clear: left;
   background: rgba(0, 0, 0, 0.2);
   text-shadow: 3px 3px 1px #000;
+}
+
+@media (min-width: 1200px) {
+  header .header-content {
+    padding: 5px 80px;
+  }
+  header .header-nav {
+    padding: 25px 80px 5px 0;
+  }
+  header .header-nav ul li {
+    padding: 15px 15px;
+    margin-left: 15px;
+  }
+
+  .page .feature-text {
+    padding: 20px 80px 30px 80px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  header .header-content {
+    padding: 5px 20px;
+  }
+  header .header-nav {
+    padding: 25px 20px 5px 0;
+  }
+  header .header-nav ul li {
+    padding: 15px 10px;
+    margin-left: 10px;
+  }
+
+  .page .feature-text {
+    padding: 20px 80px 30px 80px;
+  }
+}
+@media (max-width: 991px) {
+  header .header-content {
+    padding: 5px 10px;
+  }
+  header .header-nav {
+    padding: 25px 10px 5px 0;
+  }
+  header .header-nav ul li {
+    padding: 15px 10px;
+    margin-left: 10px;
+  }
+
+  .page .feature-text {
+    padding: 20px 20px 30px 20px;
+  }
 }
