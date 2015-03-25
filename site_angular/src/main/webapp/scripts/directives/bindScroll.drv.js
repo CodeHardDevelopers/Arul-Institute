@@ -1,6 +1,6 @@
 angular.module('ArulInstitute')
 
-.directive('bindScroll', function ($window) {
+.directive('bindScroll', function ($window, $rootScope) {
 
 
 	return {
@@ -10,12 +10,14 @@ angular.module('ArulInstitute')
         angular.element($window).bind("scroll", function(event) {
         	var scrollValue = $(this).scrollTop();
 
-
-        	if (scrollValue > 100) {
-		        $(".header-content").addClass('highlight');
-		    } else {
-		        $(".header-content").removeClass('highlight');
-		    }                         
+        	if($rootScope.currentState == 'home'){
+        		if (scrollValue > 100) {
+			        $(".header-content").addClass('highlight');
+			    } else {
+			        $(".header-content").removeClass('highlight');
+			    }                      	
+        	}
+        	   
         });
 	  }
 	};
