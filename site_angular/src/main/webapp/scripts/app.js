@@ -7,8 +7,7 @@
  * The main module for this app
  */
 
-angular.module('ArulInstitute', ['ngResource',
-    'ngCookies',    
+angular.module('ArulInstitute', ['ngResource',    
     'ui.router',
     'ui.bootstrap',
     'ArulInstitute.home',
