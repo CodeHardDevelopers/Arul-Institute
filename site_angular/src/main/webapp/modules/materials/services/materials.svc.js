@@ -23,7 +23,7 @@ function Materials($http,$q) {
         materials: {
           nodes:[],
           leafs: [],
-          name: 'Materials',
+          name: 'Downloads',
           isFullyLoaded:false
         },
         GCS_URL:'https://www.googleapis.com/storage/v1/b/arul_inst_storage_bucket/o?key=AIzaSyCBpSg9oAAkiQ2yxGz60hHBfcsFb2lbA9A'
@@ -90,14 +90,14 @@ function Materials($http,$q) {
         if(dirs.length == 1){
           //this is the end node and needs to be pushed          
           if(isDirectory(object.contentType)){
-            rootNodes.push({name:currentSubDirName, nodes:[], leafs: [], object:object});
+            rootNodes.push({name:currentSubDirName, nodes:[], leafs: [], object:object, parent:root});
           } else {
             //this is a file name (which is a leaf)
             root.leafs.push({object:object, name:currentSubDirName});
           }          
         } else {          
           //sub directory doesnt exist so create one (this shouldnt happen mostly)
-          var newNode = {name: currentSubDirName, nodes:[], leafs:[]};
+          var newNode = {name: currentSubDirName, nodes:[], leafs:[], parent:root};
           rootNodes.push(newNode);
           dirs.splice(0,1);
           createOrPushDir(dirs,newNode,object);
