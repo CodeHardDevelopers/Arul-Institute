@@ -431,7 +431,7 @@ header {
         .header-nav {
             box-shadow: 0 0px 0px 1px #EAEAEA;
             ul {
-                li {
+                li.navigator {
                     a {
                         color: #333;
                         &:hover {
@@ -450,16 +450,10 @@ header {
     }
     .header-nav {
         @extend %text-center;
-        //padding: 25px 80px 5px 0;
-        //@extend %absolute;
-        // top: 0;
-        //  right: 0;
         ul {
-            li {
+            li.navigator {
                 @extend %inline-block;
-                //  padding: 15px 10px;
-                //   margin-left: 10px;
-                a {
+                & > a {
                     display: block;
                     color: #fff;
                     @include font-size(18px);
@@ -632,18 +626,13 @@ header {
 
 @include screen-lg {
     header {
-        .header-content {
-            // padding: 5px 80px;
-       
-        }
+        .header-content {}
         .header-nav {
             padding: 0px 80px 0px 80px;
             ul {
-                li {
-                    a {
+                li.navigator {
+                    & > a {
                         padding: 20px 25px 15px 25px;
-                        //        margin-left: 15px;
-                   
                     }
                 }
             }
@@ -657,20 +646,12 @@ header {
 
 @include screen-md {
     header {
-        .header-content {
-            // padding: 5px 20px;
-       
-        }
+        .header-content {}
         .header-nav {
-            //  padding: 25px 20px 5px 0;
             ul {
-                li {
-                    //padding: 15px 10px;
-                    // margin-left: 10px;
-                    a {
+                li.navigator {
+                    & > a {
                         padding: 20px 15px 15px 15px;
-                        //        margin-left: 15px;
-                   
                     }
                 }
             }
@@ -684,17 +665,11 @@ header {
 
 @include screen-xs-sm {
     header {
-        .header-content {
-            // padding: 5px 10px;
-       
-        }
+        .header-content {}
         .header-nav {
-            //  padding: 25px 10px 5px 0;
             ul {
-                li {
-                    //      padding: 15px 10px;
-                    //      margin-left: 10px;
-               
+                li.navigator {
+                    & > a {}
                 }
             }
         }

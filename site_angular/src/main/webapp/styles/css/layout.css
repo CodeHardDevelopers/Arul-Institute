@@ -43,7 +43,7 @@ a, a[href], input[type='submit'], input[type='image'], label[for], select, butto
   vertical-align: middle;
 }
 
-header, header .header-content, header .header-nav ul li a {
+header, header .header-content, header .header-nav ul li.navigator > a {
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   -ms-transition: all 0.2s ease-in-out;
@@ -51,7 +51,7 @@ header, header .header-content, header .header-nav ul li a {
   transition: all 0.2s ease-in-out;
 }
 
-header .header-nav ul li {
+header .header-nav ul li.navigator {
   display: -moz-inline-stack;
   display: inline-block;
   vertical-align: middle;
@@ -168,24 +168,24 @@ header .highlight .title p {
 header .highlight .header-nav {
   box-shadow: 0 0px 0px 1px #EAEAEA;
 }
-header .highlight .header-nav ul li a {
+header .highlight .header-nav ul li.navigator a {
   color: #333;
 }
-header .highlight .header-nav ul li a:hover {
+header .highlight .header-nav ul li.navigator a:hover {
   border-bottom: 5px solid #2596f1;
 }
 header .header-content {
   position: fixed;
   top: 0;
 }
-header .header-nav ul li a {
+header .header-nav ul li.navigator > a {
   display: block;
   color: #fff;
   font-size: 18px;
   font-size: 1.125rem;
   border-bottom: 5px solid transparent;
 }
-header .header-nav ul li a:hover {
+header .header-nav ul li.navigator > a:hover {
   color: #2596f1;
 }
 
@@ -321,12 +321,12 @@ header .header-nav ul li a:hover {
 }
 .page .page-content .background-slider .cycle-slideshow .cycle-image:before {
   background: #000;
-  opacity: 0.4;
+  opacity: 0.7;
   content: "";
   z-index: 101;
 }
 .page .page-content .background-slider .cycle-slideshow .cycle-image.img-1 {
-  background-image: url(../../images/institute.jpg);
+  background-image: url(../../images/stock/1.jpg);
 }
 .page .page-content .background-slider .cycle-slideshow .cycle-image.img-2 {
   background-image: url(../../images/stock/2.jpg);
@@ -368,7 +368,7 @@ header .header-nav ul li a:hover {
   header .header-nav {
     padding: 0px 80px 0px 80px;
   }
-  header .header-nav ul li a {
+  header .header-nav ul li.navigator > a {
     padding: 20px 25px 15px 25px;
   }
 
@@ -377,7 +377,7 @@ header .header-nav ul li a:hover {
   }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
-  header .header-nav ul li a {
+  header .header-nav ul li.navigator > a {
     padding: 20px 15px 15px 15px;
   }
 
