@@ -343,7 +343,7 @@ html {
         font-size: 100%;
         font-family: 'Open Sans', sans-serif;
         font-weight: 400;
-        background: #000;
+        background: #fff;
         @extend %user-select-text;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
@@ -432,7 +432,7 @@ header {
             box-shadow: 0 0px 0px 1px #EAEAEA;
             ul {
                 li.navigator {
-                    a {
+                    & > a {
                         color: #333;
                         &:hover {
                             border-bottom: 5px solid $variant-color;
@@ -468,30 +468,31 @@ header {
     }
 }
 
+.content-large-title {
+    @extend %text-center;
+    background: #e2e2e2;
+    font-family: 'Roboto Slab','Open Sans';
+    font-size: 40px;
+    color: #717171;
+    padding: 35px 0;
+    text-shadow: 0 1px 1px #F2F2F2;
+    &.bottom-arrow-border {
+        @include border-bottom-serrated(18px, #ffffff);
+        padding-bottom: 40px !important;
+    }
+    &.top-arrow-border {
+        @include border-top-serrated(18px, #ffffff);
+        padding-top: 40px !important;
+    }
+    .fa {
+        padding-right: 20px;
+        margin-left: -20px;
+        color: $variant-color;
+    }
+}
+
 .page {
     background: #fff;
-    .content-large-title {
-        @extend %text-center;
-        background: #e2e2e2;
-        font-family: 'Roboto Slab','Open Sans';
-        font-size: 40px;
-        color: #717171;
-        padding: 35px 0;
-        text-shadow: 0 1px 1px #F2F2F2;
-        &.bottom-arrow-border {
-            @include border-bottom-serrated(18px, #ffffff);
-            padding-bottom: 40px !important;
-        }
-        &.top-arrow-border {
-            @include border-top-serrated(18px, #ffffff);
-            padding-top: 40px !important;
-        }
-        .fa {
-            padding-right: 20px;
-            margin-left: -20px;
-            color: $variant-color;
-        }
-    }
     .feature-text {
         background: #fff;
         padding: 20px 80px 30px 80px;
@@ -619,6 +620,105 @@ header {
                         text-shadow: 3px 3px 1px #000;
                     }
                 }
+            }
+        }
+    }
+}
+
+.main-content-view {
+    .container {
+        margin-top: 186px;
+    }
+}
+
+.material-section {
+    padding: 20px 80px;
+    .nav-crumb {
+        .fa {
+            position: relative;
+            top: 7px;
+            left: 16px;
+            color: #CFCFCF;
+        }
+        .breadcrumb {
+            @include inline-block;
+            margin: 0 0 0 10px;
+            background: #fff;
+            @include font-size(16px);
+            font-weight: 400;
+            margin-top: 10px;
+            a {
+                color: #2196F3;
+                &:hover {
+                    text-decoration: none;
+                    color: #333;
+                }
+            }
+            &.active {
+                a {
+                    color: #777;
+                }
+            }
+        }
+    }
+    .tab-content {
+        padding: 20px;
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            li {
+                padding: 10px;
+                margin: 10px;
+                @extend %transition;
+                @extend %inline-block;
+                font-weight: 400;
+                @include font-size(15px);
+                text-align: center;
+                .fa {
+                    display: block;
+                    color: #2196F3;
+                    font-size: 60px;
+                }
+                div:last-child {
+                    padding-top: 5px;
+                }
+                @extend %pointer;
+                &:hover {
+                    .fa {
+                        color: #333;
+                    }
+                }
+            }
+        }
+    }
+    .nav {
+        border: 0;
+        & .active {
+            border: 0;
+            a {
+                color: #333;
+                font-weight: 600;
+                .fa {}
+            }
+        }
+        a {
+            border: 0 !important;
+            color: #2196F3;
+            border-radius: 0;
+            font-weight: 400;
+            @extend %transition;
+            @include font-size(18px);
+            .fa {
+                display: none;
+                padding-right: 5px;
+            }
+            &:hover {
+                color: #333;
+                background: #fff;
+            }
+            &:hover, &:focus {
+                border: 0;
             }
         }
     }

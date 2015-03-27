@@ -1,28 +1,63 @@
-<br/>
-<br/>
-<div style="width:70%;margin:auto;margin-top:120px;">
+<div class="container">
 
+<div  ng-if="false">
 	<accordion ng-if="gotResponse">
 		<accordion-group heading="{{object.name}}" is-open="true">		    
-		    <div ng-include="'tree_item_renderer.html'">
-		    </div>
-    </accordion-group>
-	</accordion>
-
-  <h3 ng-if="! gotResponse">Loading....</h3>
-
+    <div ng-include="'tree_item_renderer.html'">
+    </div>
+  </accordion-group>
+</accordion>
+<h3 ng-if="! gotResponse">Loading....</h3>
 </div>
 
-<script type="text/ng-template"  id="tree_item_renderer.html">    
-    <accordion>        
-      <accordion-group heading="{{object.name}}" ng-repeat="object in object.nodes" >		    
-  	    <div ng-include="'tree_item_renderer.html'">
-  	    </div>
-      </accordion-group>
-	    <h3><a style="display:block;" ng-href="{{leaf.object.mediaLink}}" ng-repeat="leaf in object.leafs"> {{leaf.name}}<a></h3>
 
-      <h3 ng-show="(object.leafs.length == 0 && object.nodes.length == 0)"> Folder is Empty! </h3>
-    </accordion>
+<script type="text/ng-template"  id="tree_item_renderer.html">    
+  <accordion>        
+    <accordion-group heading="{{object.name}}" ng-repeat="object in object.nodes" >		    
+    <div ng-include="'tree_item_renderer.html'">
+    </div>
+  </accordion-group>
+  <h3><a style="display:block;" ng-href="{{leaf.object.mediaLink}}" ng-repeat="leaf in object.leafs"> {{leaf.name}}<a></h3>
+  <h3 ng-show="(object.leafs.length == 0 && object.nodes.length == 0)"> Folder is Empty! </h3>
+</accordion>
 </script>
 
 
+<div class="material-section"> 
+ <div>
+   <div>
+     <div role="tabpanel">
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab"><i class="fa fa-tags"></i> Tenth Standard</a></li>
+        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-tags"></i> Eleventh Standard</a></li>
+        <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab"><i class="fa fa-tags"></i> Twelfth Standard</a></li>                       
+      </ul>
+      <div class="nav-crumb">
+        <i class="fa fa-chevron-right"></i>
+        <ol class="breadcrumb">
+          <li><a href="#">Tenth Standard</a></li>
+          <li><a href="#">Keys</a></li>
+          <li class="active">2015</li>
+        </ol>
+      </div>
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="home">
+          <div>
+            <ul>
+              <li><div class="fa fa-folder-open"></div><div>Physics</div></li>
+              <li><div class="fa fa-folder-open"></div><div>Chemistry</div></li>  
+              <li><div class="fa fa-folder-open"></div><div>Maths</div></li>
+              <li><div class="fa fa-file-text"></div><div>Volume 1</div></li>
+              <li><div class="fa fa-file-text"></div><div>Volume 2</div></li>                                                                       
+            </ul>
+          </div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="profile">...</div>                       
+      </div>
+
+    </div>
+  </div>
+</div>
+</div>
+
+</div>
