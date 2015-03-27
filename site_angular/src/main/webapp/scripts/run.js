@@ -11,6 +11,6 @@ angular.module('ArulInstitute')
  */
 
 
-function run() {
+function run($rootScope,$state) {
     console.log('App Run');
 }

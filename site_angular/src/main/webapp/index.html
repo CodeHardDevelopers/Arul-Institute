@@ -11,7 +11,7 @@
     </head>
     <body bind-scroll>
         <header id="header">
-            <div class="header-content">
+            <div class="header-content" ng-class="{highlight: (currentState != 'home')}">
                 <div class="title">
                     <div><span class="ui-bold">@</span>rul Institute</div>
                     <p>ground for excellence</p>
@@ -21,6 +21,17 @@
                         <li><a ui-sref="home" class="active" ui-sref-active="active" >Home</a></li>
                         <li class="dropdown" dropdown>
                             <a class="dropdown-toggle" dropdown-toggle >
+                                About Us <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a >Our History</a></li>
+                                <li><a >Why Arul?</a></li>
+                                <li><a >Founders Message</a></li>
+                                <li><a >Faculty</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" dropdown>
+                            <a class="dropdown-toggle" dropdown-toggle >
                             Courses <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu" role="menu">
@@ -28,11 +39,13 @@
                                 <li><a ui-sref="courses">Eleventh</a></li>
                                 <li><a ui-sref="courses">Tenth Uniform Syllabus</a></li>
                                 <li><a ui-sref="courses">Tenth CBSE Syllabus</a></li>
+                                <li><a ui-sref="courses">C Program</a></li>
+                                <li><a ui-sref="courses">Engineering Graphics</a></li>
                             </ul>
                         </li>
                         <li><a ui-sref="instructions" ui-sref-active="selected">Instructions</a></li>
-                        <li><a ui-sref="materials" ui-sref-active="selected">Materials</a></li>
-                        <li><a ui-sref="toppers" ui-sref-active="selected">Toppers</a></li>
+                        <li><a ui-sref="materials" ui-sref-active="selected">Downloads</a></li>
+                        <li><a ui-sref="toppers" ui-sref-active="selected">Gallery</a></li>
                         <li><a ui-sref="testimonials" ui-sref-active="selected">Testimonials</a></li>
                         <li><a ui-sref="contact" ui-sref-active="selected">Contact Us</a></li>
                     </ul>
@@ -43,7 +56,7 @@
 
 
 
-        <div class="page index-page" ui-view="mainContent"></div>
+        <div style="height:100%;" ui-view="mainContent"></div>
 
 
 
