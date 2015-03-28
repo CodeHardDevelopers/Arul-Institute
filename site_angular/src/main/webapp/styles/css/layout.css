@@ -324,18 +324,18 @@ header .header-nav ul li.navigator > a:hover {
 }
 .page .page-content .background-slider .cycle-slideshow .cycle-image:before {
   background: #000;
-  opacity: 0.7;
+  opacity: 0.4;
   content: "";
   z-index: 101;
 }
 .page .page-content .background-slider .cycle-slideshow .cycle-image.img-1 {
-  background-image: url(../../images/stock/1.jpg);
+  background-image: url(../../images/institute.jpg);
 }
 .page .page-content .background-slider .cycle-slideshow .cycle-image.img-2 {
-  background-image: url(../../images/stock/2.jpg);
+  background-image: url(../../images/stock/abdulkalam.jpg);
 }
 .page .page-content .background-slider .cycle-slideshow .cycle-image.img-3 {
-  background-image: url(../../images/stock/3.jpg);
+  background-image: url(../../images/stock/einstein.jpg);
 }
 .page .page-content .background-slider .cycle-slideshow .cycle-image.img-4 {
   background-image: url(../../images/stock/4.jpg);

@@ -11,6 +11,7 @@ angular.module('ArulInstitute', ['ngResource',
     'ui.router',
     'ui.bootstrap',
     'ArulInstitute.home',
+    'ArulInstitute.aboutus',
     'ArulInstitute.courses',
     'ArulInstitute.instructions',
     'ArulInstitute.materials',
@@ -40,6 +41,17 @@ function config($stateProvider, $urlRouterProvider) {
                 'mainContent': {
                     templateUrl: 'modules/home/templates/home.html',
                     controller: 'HomeCtrl'
+                }
+            }
+        })
+
+        //About us Page
+        .state('aboutus', {
+            url: '/aboutus',            
+            views: {                
+                'mainContent': {
+                    templateUrl: 'modules/aboutus/templates/aboutus.html',
+                    controller: 'AboutUsCtrl'
                 }
             }
         })

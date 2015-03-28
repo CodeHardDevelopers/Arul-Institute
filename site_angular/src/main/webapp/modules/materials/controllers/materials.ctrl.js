@@ -26,6 +26,7 @@ function MaterialsCtrl ($scope, $state, $stateParams, Materials) {
     
     $scope.oneAtATime = true; 
     $scope.breadcrumbStack = [];
+    $scope.tabs = []
     $scope.currentNode; 
 
 
@@ -35,6 +36,7 @@ function MaterialsCtrl ($scope, $state, $stateParams, Materials) {
 
     $scope.navigateToNode = navigateToNode;
     $scope.navigateBackToNode = navigateBackToNode;
+    $scope.switchToTab = switchToTab;
 
 
     function navigateToNode(node, parentNode){
@@ -53,6 +55,10 @@ function MaterialsCtrl ($scope, $state, $stateParams, Materials) {
         $scope.currentNode = node;
     }
 
+    function switchToTab(node){
+        $scope.currentNode = node;
+    }
+
     $scope.callMe = function(data, $event){
     	console.log("came inside call me");
     	if(data.leaf){
@@ -63,6 +69,7 @@ function MaterialsCtrl ($scope, $state, $stateParams, Materials) {
   	Materials.getMaterials().then(function(materials){   
       console.log(materials, materials.nodes[1]);
       $scope.currentNode = materials;
+      $scope.tabs = materials.nodes;
       $scope.breadcrumbStack.push(materials);
       $scope.object = materials;
     }).finally(function(){
