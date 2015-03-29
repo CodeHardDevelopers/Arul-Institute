@@ -28,11 +28,8 @@
    <div>
      <div role="tabpanel">
       <ul class="nav nav-tabs" role="tablist">
-        <!--
-        <li ng-repeat="tab in tabs track by $index" role="presentation" class="active"><a ng-click="switchToTab(tab)"href="#" aria-controls="home" role="tab" data-toggle="tab"><i class="fa fa-tags"></i> {{tab.name}}</a></li>
         
-        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-tags"></i> Eleventh Standard</a></li>
-        <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab"><i class="fa fa-tags"></i> Twelfth Standard</a></li>  -->
+        <li ng-repeat="tab in tabs track by $index" role="presentation" ng-class="{active:(breadcrumbStack[0] == tab)}"><a ng-click="switchToTab(tab)" aria-controls="home" role="tab" data-toggle="tab"><i class="fa fa-tags"></i> {{tab.name}}</a></li>
       </ul>
       <h2 ng-if="! gotResponse">Loading....</h2>
       <div class="nav-crumb" ng-if="gotResponse">
@@ -44,6 +41,7 @@
           </li>
         </ol>
       </div>
+
       <div class="tab-content">
         <div role="tabpanel" class="tab-pane fade in active" id="home">
           <div>
