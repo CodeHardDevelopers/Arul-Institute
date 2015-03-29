@@ -31,12 +31,5 @@ function HomeCtrl ($scope, $state, $stateParams, $rootScope) {
     //####################################
 
 
-    console.log('HomeCtrl: came inside home controller',$state);
-
-    $rootScope.currentState = $state.current.name;
-
-    $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams){ 
-    	$rootScope.currentState = toState.name;
-    });
-
+    console.log('HomeCtrl: came inside home controller');
 }

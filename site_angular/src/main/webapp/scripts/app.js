@@ -34,8 +34,15 @@ function config($stateProvider, $urlRouterProvider) {
 	
     $stateProvider
 
+        .state('app', {
+            url: '/app',
+            abstract: true,
+            templateUrl: 'templates/menu.html',
+            controller: 'AppCtrl'
+        })
+
         //Home Page
-        .state('home', {
+        .state('app.home', {
             url: '/home',            
             views: {                
                 'mainContent': {
@@ -46,7 +53,7 @@ function config($stateProvider, $urlRouterProvider) {
         })
 
         //About us Page
-        .state('aboutus', {
+        .state('app.aboutus', {
             url: '/aboutus',            
             views: {                
                 'mainContent': {
@@ -57,7 +64,7 @@ function config($stateProvider, $urlRouterProvider) {
         })
 
         //Courses Page
-        .state('courses', {
+        .state('app.courses', {
             url: '/courses',
             views: {                
                 'mainContent': {
@@ -69,7 +76,7 @@ function config($stateProvider, $urlRouterProvider) {
 
 
         //Instructions Page
-        .state('instructions', {
+        .state('app.instructions', {
             url: '/instructions',
             views: {                
                 'mainContent': {
@@ -80,7 +87,7 @@ function config($stateProvider, $urlRouterProvider) {
         })
 
         //Materials        
-        .state('materials', {
+        .state('app.materials', {
             url: '/materials',
             views: {                
                 'mainContent': {
@@ -92,7 +99,7 @@ function config($stateProvider, $urlRouterProvider) {
 
 
         //Testimonials        
-        .state('testimonials', {
+        .state('app.testimonials', {
             url: '/testimonials',
             views: {                
                 'mainContent': {
@@ -104,7 +111,7 @@ function config($stateProvider, $urlRouterProvider) {
 
 
         //Toppers        
-        .state('toppers', {
+        .state('app.toppers', {
             url: '/toppers',
             views: {                
                 'mainContent': {
@@ -115,7 +122,7 @@ function config($stateProvider, $urlRouterProvider) {
         })
 
         //Contact Page
-        .state('contact', {
+        .state('app.contact', {
             url: '/contact',
             views: {                
                 'mainContent': {
@@ -128,7 +135,7 @@ function config($stateProvider, $urlRouterProvider) {
 
 
 
-    $urlRouterProvider.otherwise('/home');
+    $urlRouterProvider.otherwise('/app/home');
 }
 
 

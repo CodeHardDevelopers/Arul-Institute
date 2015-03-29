@@ -1,83 +1,45 @@
-<ion-side-menus>
-
-    <ion-pane ion-side-menu-content class="app-nav-view">
-        <div class="status-bar"></div>
-        <ion-nav-bar class="bar-dark">
-        </ion-nav-bar>
-        <ion-nav-view name="menuContent" >
-        </ion-nav-view>
-        <footer-nav></footer-nav>
-    </ion-pane>
-
-    <ion-side-menu side="left">
-        <header class="bar bar-header bar-dark">
-        </header>
-        <div class="bar bar-subheader bar-dark">
-            <h1 class="title menu title-right">Menu</h1>
+<header id="header" >
+        <div class="header-content" bind-scroll ng-class="{highlight: (currentState != 'app.home')}">
+            <div class="title">
+                <div><span class="ui-bold">@</span>rul institute</div>
+                <p>......ground for excellence</p>
+            </div>
+            <div class="header-nav">
+                <ul>
+                    <li class="navigator"><a ui-sref="app.home" class="active" ui-sref-active="active" >Home</a></li>
+                    <li class="navigator dropdown" dropdown>
+                        <a class="dropdown-toggle" dropdown-toggle >
+                            About Us <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a ui-sref="app.aboutus">Our History</a></li>
+                            <li><a ui-sref="app.aboutus">Why Arul?</a></li>
+                            <li><a ui-sref="app.aboutus">Founders Message</a></li>
+                            <li><a ui-sref="app.aboutus">Faculty</a></li>
+                        </ul>
+                    </li>
+                    <li class="navigator dropdown" dropdown>
+                        <a class="dropdown-toggle" dropdown-toggle >
+                            Courses <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a ui-sref="app.courses">Twelfth</a></li>
+                            <li><a ui-sref="app.courses">Eleventh</a></li>
+                            <li><a ui-sref="app.courses">Tenth Uniform Syllabus</a></li>
+                            <li><a ui-sref="app.courses">Tenth CBSE Syllabus</a></li>
+                            <li><a ui-sref="app.courses">C Program</a></li>
+                            <li><a ui-sref="app.courses">Engineering Graphics</a></li>
+                        </ul>
+                    </li>
+                    <li class="navigator"><a ui-sref="app.instructions" ui-sref-active="active">Instructions</a></li>
+                    <li class="navigator"><a ui-sref="app.materials" ui-sref-active="active">Downloads</a></li>
+                    <li class="navigator"><a ui-sref="app.toppers" ui-sref-active="active">Gallery</a></li>
+                    <li class="navigator"><a ui-sref="app.testimonials" ui-sref-active="active">Testimonials</a></li>
+                    <li class="navigator"><a ui-sref="app.contact" ui-sref-active="active">Contact Us</a></li>
+                </ul>
+            </div>
         </div>
-        <ion-content class="has-subheader menu-dark-bg" scroll="false">
+    </header>
+    <!-- /header -->
 
-            <ion-list class="main-navigation">
-                <ion-item nav-clear menu-close ui-sref="app.timeline" ui-sref-active="active">
-                    <span>Home</span>
-                </ion-item>
-                <ion-item nav-clear menu-close ui-sref="app.my-profile" ui-sref-active="active">
-          <span class="box">
-			  <div>
-                  <div class="profile">My Profile</div>
-                  <div class="user-name">{{user.name}}</div>
-              </div>
-		  </span>
-                </ion-item>
-                <ion-item nav-clear menu-close ui-sref="app.profiles" ui-sref-active="active">
-                    <span>Members</span>
-                </ion-item>
-                <ion-item nav-clear menu-close ui-sref="app.conduct" ui-sref-active="active">
-                    <span>Code of Conduct</span>
-                </ion-item>
-                <ion-item nav-clear href="#" ng-click="showLogoutConfirmationActionSheet()">
-				 <!-- ui-sref="preauth({explicit: true})"> -->
-                    <span>Log Out </span>
-                </ion-item>
-            </ion-list>
-        </ion-content>
-    </ion-side-menu>
-
-    <ion-side-menu side="right">
-        <header class="bar  bar-header  bar-dark"></header>
-        <div class="bar bar-subheader bar-dark">
-            <h1 class="title menu title-left">Explore</h1>
-        </div>
-        <ion-content class="has-subheader menu-dark-bg" scroll="false">
-
-            <ion-list class="main-explore">
-                <ion-item href="#" nav-clear ng-click="exploreBy('recent')"
-                          ng-class="{true: 'active'}[exploreType == 'recent']">
-                    <span>Most Recent</span>
-                </ion-item>
-                <ion-item href="#" nav-clear ng-click="exploreBy('liked')"
-                          ng-class="{true: 'active'}[exploreType == 'liked']">
-                   <span>Most Liked</span>
-                </ion-item>
-                <ion-item href="#" nav-clear ng-click="exploreBy('followed')"
-                          ng-class="{true: 'active'}[exploreType == 'followed']">
-                    <span>Followed</span>
-                </ion-item>
-                <ion-item href="#" item-type="item-icon-right" ng-click="showCollectionsModal()"
-                          ng-class="{true: 'active'}[exploreType == 'collections']">
-                    <span>Collections</span>
-                    <i class="icon ion-chevron-right"></i>
-                </ion-item>
-                <ion-item href="#" item-type="item-icon-right" ng-click="showKeywordsModal()"
-                          ng-class="{true: 'active'}[exploreType == 'keywords']">
-                    <span>Keywords</span>
-                    <i class="icon ion-chevron-right"></i>
-                </ion-item>
-
-            </ion-list>
-
-        </ion-content>
-
-
-    </ion-side-menu>
-</ion-side-menus>
+    <div class="full-height main-content-view" ui-view="mainContent"></div>

@@ -48,6 +48,8 @@ function Materials($http,$q) {
         
         if(response.data){
           var objectList = response.data.items;
+          service.materials.nodes = [];
+          service.materials.leafs = [];
           objectList.forEach(function(object){            
             var dirs;
             if(isDirectory(object.contentType)){
@@ -58,7 +60,7 @@ function Materials($http,$q) {
               dirs = object.name.split('/');              
             }
 
-            //console.log(dirs);
+            //console.log(dirs);            
             createOrPushDir(dirs,service.materials,object);
           });
         }           
