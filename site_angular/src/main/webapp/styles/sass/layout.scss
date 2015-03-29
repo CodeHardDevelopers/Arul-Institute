@@ -403,27 +403,24 @@ header {
     z-index: 1001;
     .title {
         @extend %text-center;
-        padding: 10px 80px;
+        padding: 5px 80px;
         div:first-child {
             font-weight: 300;
             color: #fff;
-            @include font-size(40px);
+            @include font-size(47px);
             font-family: "Roboto Slab";
         }
         p {
             @include font-size(20px);
-            padding: 5px 0 0 5px;
+            padding: 0 0 0 55px;
             font-weight: 600;
-            color: #{$variant-light};
+            color: #{$variant-color};
         }
     }
     .highlight {
         background: #fff;
         .title {
             background: #{$variant-color};
-            div:first-child {
-                font-weight: 400;
-            }
             p {
                 color: #fff;
             }
@@ -454,6 +451,8 @@ header {
             li.navigator {
                 @extend %inline-block;
                 & > a {
+                    @extend %relative;
+                    bottom: -1px;
                     display: block;
                     color: #fff;
                     @include font-size(18px);
@@ -474,7 +473,7 @@ header {
     font-family: 'Roboto Slab','Open Sans';
     font-size: 40px;
     color: #717171;
-    padding: 35px 0;
+    padding: 25px 0 35px 0;
     text-shadow: 0 1px 1px #F2F2F2;
     &.bottom-arrow-border {
         @include border-bottom-serrated(18px, #ffffff);
@@ -626,8 +625,35 @@ header {
 }
 
 .main-content-view {
-    .container {
-        margin-top: 186px;
+    & > .container {
+        margin-top: 171px;
+        width: 100% !important;
+        padding: 0;
+    }
+    .instruction-point {
+        padding: 20px 40px;
+        li {
+            line-height: 35px;
+            text-align: justify;
+            padding-top: 10px;
+            .fa {
+                padding-right: 20px;
+                color: #2596f1;
+            }
+        }
+    }
+    .info-text {
+        line-height: 35px;
+        padding: 10px 20px;
+        border: #2596F1 thin solid;
+        border-radius: 10px;
+        font-size: 20px;
+        text-align: justify;
+        .fa {
+            margin-right: 20px;
+            color: #2596f1;
+            font-size: 25px;
+        }
     }
 }
 
@@ -732,7 +758,7 @@ header {
             ul {
                 li.navigator {
                     & > a {
-                        padding: 20px 25px 15px 25px;
+                        padding: 15px 25px 10px 25px;
                     }
                 }
             }
@@ -751,7 +777,7 @@ header {
             ul {
                 li.navigator {
                     & > a {
-                        padding: 20px 15px 15px 15px;
+                        padding: 15px 15px 10px 15px;
                     }
                 }
             }
