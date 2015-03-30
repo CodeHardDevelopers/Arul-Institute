@@ -1,325 +1,81 @@
 <div class="container">
-    <section class="section">
-
-        <div class="jumbotron">
-            <h1> Information for +2 Students</h1>
-
-            <h2><b>Admission Criteria</b></h2>
-
-            <p>Admission criteria for our coaching classes is based on the tenth standard public marks</p>
-
-
-            <h2><b>Batch Timings</b></h2>
-
-            <div class="row">
-                <div class="col-md-3">
-                    <h3>Pallavaram</h3>
-                </div>
-
-                <div class="col-md-3">
-                    <h3>Batch 1</h3>
-                    <p>6.00 am to 8.00 am</p>
-                </div>
-
-                <div class="col-md-3">
-                    <h3>Batch 2</h3>
-                    <p>5.15 pm to 7.15 pm (only for girls)</p>
-                </div>
-
-                <div class="col-md-3">
-                    <h3>Batch 3</h3>
-                    <p>7.30 pm to 9.30 pm</p>
+    <div class="content-large-title bottom-arrow-border"><span class="fa fa-graduation-cap"></span>Courses</div>
+    <div class="container" ng-controller="CoursesCtrl as cCtrl">
+        <div class="course-list" ng-repeat="course in cCtrl.courses">   
+            <div class="course-title" ng-bind="course.title"></div>  
+            <div ng-if="course.hasAdmissionCriteria">
+                <h3>Admission Criteria</h3>
+                <div>
+                    <p class="desc-text" ng-bind="course.admissionCriteria"></p>
                 </div>
             </div>
-
-            <div class="row">
-                <div class="col-md-3">
-                    <h3>East Tambaram</h3>
-                </div>
-
-                <div class="col-md-3">
-                    <h3>Batch 4</h3>
-                    <p>6.00 am to 8.00 am</p>
-                </div>
-
-                <div class="col-md-3">
-                    <h3>Batch 5</h3>
-                    <p>5.15 pm to 7.15 pm (only for girls)</p>
-                </div>
-
-                <div class="col-md-3">
-                    <h3>Batch 6</h3>
-                    <p>7.30 pm to 9.30 pm</p>
-                </div>
-            </div>
-
-            <h2><b>Concession for Meritorious Students</b></h2>
-
-            <p>Concession in fees would be given based on the percentage of marks scored by the student in the first 20 weekly tests.</p>
-
-            <div class="row">
-                <div class="col-md-3">
-                    <h3>Percentage Range</h3>
-                </div>
-
-                <div class="col-md-2">                    
-                    <p>95% &amp; above</p>
-                </div>
-                <div class="col-md-2">                    
-                    <p>90 to 94%</p>
-                </div>
-                <div class="col-md-2">                    
-                    <p>85 &amp; 89%</p>
-                </div>
-                <div class="col-md-2">                    
-                    <p>80 &amp; 84%</p>
-                </div>                
-            </div>
-
-
-            <div class="row">
-                <div class="col-md-3">
-                    <h3>Concession Offered</h3>
-                </div>
-
-                <div class="col-md-2">                    
-                    <p>Rs. 4000/-</p>
-                </div>
-                <div class="col-md-2">                    
-                    <p>Rs. 3000/-</p>
-                </div>
-                <div class="col-md-2">                    
-                    <p>Rs. 2000/-</p>
-                </div>
-                <div class="col-md-2">                    
-                    <p>Rs. 1000/-</p>
-                </div>                
-            </div>
-
-
-            <h2><b>Important Dates</b></h2>
-
-
-            <div class="row">
-                <div class="col-md-5">
-                    <li>Classes commence from <br/> (Any change in the date of commencement of classes would be intimated by SMS)</li>
-                </div>
-
-                <div class="col-md-3">                    
-                    <p>25th March 2015</p>
-                </div>
-            </div>
-            
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="jumbotron">
-    		<h1> Information for +1 Students</h1>
-            <h2><b>Admission Criteria</b></h2>
-
-            <p>Admission criteria for our coaching classes is based on the tenth standard public marks</p>
-
-
-            <h2><b>Batch Timings</b></h2>
-
-            <div class="row">
-                <div class="col-md-4">
-                    <h3>Pallavaram</h3>
-                </div>
-
-                <div class="col-md-8">
-                    <h3>Batch 1</h3>
-                    <p>6.00 am to 7.30 am</p>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-4">
-                    <h3>East Tambaram</h3>
-                </div>
-
-                <div class="col-md-8">
-                    <h3>Batch 2</h3>
-                    <p>5.30 pm to 7.00 pm</p>
-                </div>
-            </div>
-
-            <h2><b>Concession for Meritorious Students</b></h2>
-
-            <p>Concession in fees would be given based on the percentage of marks scored by the student in the first 20 weekly tests.</p>
-
-            <div class="row">
-                <div class="col-md-3">
-                    <h3>Percentage Range</h3>
-                </div>
-
-                <div class="col-md-2">                    
-                    <p>95% &amp; above</p>
-                </div>
-                <div class="col-md-2">                    
-                    <p>90 to 94%</p>
-                </div>
-                <div class="col-md-2">                    
-                    <p>85 &amp; 89%</p>
-                </div>
-                <div class="col-md-2">                    
-                    <p>80 &amp; 84%</p>
-                </div>                
-            </div>
-
-
-            <div class="row">
-                <div class="col-md-3">
-                    <h3>Concession Offered</h3>
-                </div>
-
-                <div class="col-md-2">                    
-                    <p>Rs. 1200/-</p>
-                </div>
-                <div class="col-md-2">                    
-                    <p>Rs. 1000/-</p>
-                </div>
-                <div class="col-md-2">                    
-                    <p>Rs. 800/-</p>
-                </div>
-                <div class="col-md-2">                    
-                    <p>Rs. 600/-</p>
-                </div>                
-            </div>
-
-
-            <h2><b>Important Dates</b></h2>
-
-            <div class="row">
-                <div class="col-md-5">
-                    <li>Classes commence from <br/> (Any change in the date of commencement of classes would be intimated by SMS)</li>
-                </div>
-
-                <div class="col-md-3">                    
-                    <p>17th June 2015</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-5">
-                    <li>Last date for submission of Application form <br/> (Admissions will be closed earlier if sufficient number of students have enrolled)</li>
-                </div>
-
-                <div class="col-md-3">                    
-                    <p>14th June 2015</p>
-                </div>
+            <div>
+               <h3>Batch Timings</h3>
+               <div class="batch-section" ng-repeat="batch in course.batches">
+                <div class="deep-section">
+                    <p class="batch-location"><i class="fa fa-map-marker"></i><span ng-bind="batch.location"></span></p>
+                    <div>
+                        <div class="batch-layout" ng-repeat="timings in batch.batchTimings">
+                            <div class="batch-info">
+                                <i ng-if="timings.forGirlsOnly" class="fa fa-venus"></i>
+                                <span class="ui-bold" ng-bind="timings.name"></span>
+                                <span ng-if="timings.forGirlsOnly" class="girls-only">for girls only</span>
+                            </div>
+                            <div class="batch-timing">
+                                <span ng-bind="timings.timeStart"></span> to <span ng-bind="timings.timeEnd"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>    
             </div>
         </div>
-    </section>
-
-
-    <section class="section">
-        <div class="jumbotron">
-            <h1> Information for 10th Students (Uniform Syllabus)</h1>
-
-            <h2><b>Batch Timings</b></h2>
-
-            <div class="row">
-                <div class="col-md-4">
-                    <h3>Pallavaram</h3>
-                </div>
-
-                <div class="col-md-8">
-                    <h3>Batch 1</h3>
-                    <p>5.30 pm to 6.45 pm</p>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-4">
-                    <h3>East Tambaram</h3>
-                </div>
-
-                <div class="col-md-8">
-                    <h3>Batch 2</h3>
-                    <p>6.00 am to 7.15 am</p>
-                </div>
-            </div>
-
-
-
-            <h2><b>Important Dates</b></h2>
-
-            <div class="row">
-                <div class="col-md-5">
-                    <li>Classes commence from <br/> (Any change in the date of commencement of classes would be intimated by SMS)</li>
-                </div>
-
-                <div class="col-md-3">                    
-                    <p>15th April 2015</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-5">
-                    <li>Last date for submission of Application form <br/> (Admissions will be closed earlier if sufficient number of students have enrolled)</li>
-                </div>
-
-                <div class="col-md-3">                    
-                    <p>12th April 2015</p>
-                </div>
-            </div>
+        <div ng-if="course.hasConsession">
+           <h3>Concession for Meritorious Students</h3>
+           <div>
+            <p class="desc-text" ng-bind="course.consessionCriteria"></p>
         </div>
-    </section>
-
-
-    <section class="section">
-        <div class="jumbotron">
-            <h1> Information for 10th Students (CBSE Syllabus)</h1>
-
-            <h2><b>Batch Timings</b></h2>
-
-            <div class="row">
-                <div class="col-md-4">
-                    <h3>Pallavaram</h3>
+        <div class="deep-section">
+            <div class="ui-bold">Consession Offered</div>
+            <div class="batch-layout" ng-repeat="consession in course.consessionOffered">
+                <div class="batch-info">                    
+                    <span class="ui-bold" ng-bind="consession.percentageRange"></span>                   
                 </div>
-
-                <div class="col-md-8">
-                    <h3>Batch 1</h3>
-                    <p>5.30 pm to 7.00 pm</p>
+                <div class="batch-timing">
+                    <span class="fa fa-inr"></span><span ng-bind="consession.offeredPrice"></span> 
                 </div>
             </div>
+        </div>        
+    </div>
+    <div>
+        <h3>Important Dates</h3>     
+        <div class="deep-section">
+            <div>
+                <div class="important-dates-section" ng-repeat="date in course.importantDates">
+                    <div class="important-dates">
+                        <div class="date-format">
+                           <i class="fa fa-calendar"></i> 
+                           <span class="ui-bold">
+                               <span>
+                                   <span ng-bind="date.date().date"></span>
+                                   <sup ng-bind="date.date().ordinal"></sup>
+                               </span>
+                               <span ng-bind="date.date().month"></span>, 
+                               <span ng-bind="date.date().year"></span>
+                           </span>
+                       </div>
+                       <div>
+                           <div class="important-title" ng-bind="date.title"></div>
+                           <p class="important-note" ng-bind="date.note"></p>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>        
+   </div>
+</div>
 
-            <div class="row">
-                <div class="col-md-4">
-                    <h3>East Tambaram</h3>
-                </div>
-
-                <div class="col-md-8">
-                    <h3>Batch 2</h3>
-                    <p>5.30 pm to 7.00 pm</p>
-                </div>
-            </div>
 
 
-
-            <h2><b>Important Dates</b></h2>
-
-            <div class="row">
-                <div class="col-md-5">
-                    <li>Classes commence from <br/> (Any change in the date of commencement of classes would be intimated by SMS)</li>
-                </div>
-
-                <div class="col-md-3">                    
-                    <p>18th March 2015</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-5">
-                    <li>Last date for submission of Application form <br/> (Admissions will be closed earlier if sufficient number of students have enrolled)</li>
-                </div>
-
-                <div class="col-md-3">                    
-                    <p>15th March 2015</p>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
+</div>
 </div>
 

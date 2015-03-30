@@ -51,7 +51,7 @@ header, header .header-content, header .header-nav ul li.navigator > a, .materia
   transition: all 0.2s ease-in-out;
 }
 
-header .header-nav ul li.navigator, .material-section .tab-content ul li {
+header .header-nav ul li.navigator, .course-list .batch-layout, .course-list .important-dates > div, .material-section .tab-content ul li {
   display: -moz-inline-stack;
   display: inline-block;
   vertical-align: middle;
@@ -172,7 +172,7 @@ header .highlight .header-nav {
 header .highlight .header-nav ul li.navigator > a {
   color: #333;
 }
-header .highlight .header-nav ul li.navigator > a:hover {
+header .highlight .header-nav ul li.navigator > a:hover, header .highlight .header-nav ul li.navigator > a.active {
   border-bottom: 5px solid #2596f1;
 }
 header .header-content {
@@ -187,7 +187,7 @@ header .header-nav ul li.navigator > a {
   font-size: 1.125rem;
   border-bottom: 5px solid transparent;
 }
-header .header-nav ul li.navigator > a:hover {
+header .header-nav ul li.navigator > a:hover, header .header-nav ul li.navigator > a.active {
   color: #2596f1;
 }
 
@@ -396,6 +396,102 @@ header .header-nav ul li.navigator > a:hover {
   margin-right: 20px;
   color: #2596f1;
   font-size: 25px;
+}
+
+.deep-section {
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.course-list {
+  background: #FFF;
+  margin: 25px 0 25px 0px;
+  border: #E2E2E2 thin solid;
+  border-radius: 10px;
+  box-shadow: 0 2px 3px 1px #ECECEC;
+  padding: 25px 30px 0 30px;
+}
+.course-list .course-title {
+  font-size: 30px;
+  color: #2596f1;
+}
+.course-list h3 {
+  font-family: "Roboto Slab";
+  font-size: 20px;
+  font-weight: 400;
+}
+.course-list .desc-text {
+  padding: 10px;
+  color: #717171;
+}
+.course-list .batch-section {
+  margin-bottom: 20px;
+}
+.course-list div.batch-section:not(:last-of-type) {
+  border-bottom: #E2E2E2 thin solid;
+  padding-bottom: 20px;
+}
+.course-list .batch-info .fa {
+  color: #F77474;
+  padding-right: 5px;
+}
+.course-list .batch-info span.girls-only {
+  color: #ccc;
+  padding-left: 5px;
+  color: #9B9292;
+  font-size: 15px;
+}
+.course-list .batch-location {
+  color: #2596f1;
+  font-size: 20px;
+}
+.course-list .batch-location .fa {
+  padding-right: 10px;
+}
+.course-list .batch-layout {
+  padding: 15px 15px 5px 15px;
+  margin: 15px 0 0 15px;
+  border: #2596f1 1px solid;
+  border-radius: 5px;
+  color: #2596f1;
+  min-width: 180px;
+}
+.course-list .batch-layout .batch-timing {
+  color: #333;
+  padding: 10px 0;
+}
+.course-list .batch-layout .batch-timing .fa {
+  padding-right: 10px;
+}
+.course-list .batch-layout .batch-timing span {
+  font-size: 22px;
+}
+.course-list .batch-layout .batch-timing span:not(.fa) {
+  font-family: "Roboto Slab";
+}
+.course-list div.important-dates-section:not(:last-of-type) {
+  border-bottom: #E2E2E2 thin solid;
+  margin-bottom: 15px;
+}
+.course-list .important-dates > div {
+  vertical-align: top;
+  padding: 10px 20px;
+}
+.course-list .important-dates .date-format {
+  font-size: 18px;
+}
+.course-list .important-dates .date-format .fa {
+  padding-right: 10px;
+  color: #2596f1;
+}
+.course-list .important-dates .important-title {
+  font-size: 20px;
+  color: #2596f1;
+}
+.course-list .important-dates .important-note {
+  color: #717171;
+  font-size: 15px;
+  padding: 10px 0;
 }
 
 .material-section {
