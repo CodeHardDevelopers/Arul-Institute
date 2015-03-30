@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <title>Arul Institute</title>
@@ -13,25 +14,25 @@
     <header id="header">
         <div class="header-content" ng-class="{highlight: (currentState != 'home')}">
             <div class="title">
-                <div><span class="ui-bold">@</span>rul Institute</div>
+                <div><span class="ui-bold">@</span>rul institute</div>
                 <p>......ground for excellence</p>
             </div>
             <div class="header-nav">
                 <ul>
                     <li class="navigator"><a ui-sref="home" class="active" ui-sref-active="active" >Home</a></li>
                     <li class="navigator dropdown" dropdown>
-                        <a class="dropdown-toggle" dropdown-toggle >
+                        <a ui-sref="aboutus" class="dropdown-toggle" dropdown-toggle >
                             About Us <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a >Our History</a></li>
-                            <li><a >Why Arul?</a></li>
-                            <li><a >Founders Message</a></li>
-                            <li><a >Faculty</a></li>
+                            <li><a ui-sref="aboutus">Our History</a></li>
+                            <li><a ui-sref="aboutus">Why Arul?</a></li>
+                            <li><a ui-sref="aboutus">Founders Message</a></li>
+                            <li><a ui-sref="aboutus">Faculty</a></li>
                         </ul>
                     </li>
                     <li class="navigator dropdown" dropdown>
-                        <a class="dropdown-toggle" dropdown-toggle >
+                        <a ui-sref="courses" class="dropdown-toggle" dropdown-toggle >
                             Courses <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" role="menu">
@@ -54,11 +55,7 @@
     </header>
     <!-- /header -->
 
-
-
     <div class="full-height main-content-view" ui-view="mainContent"></div>
-
-
 
     <script src="lib/jquery/jquery-2.0.3.min.js"></script>
     <script src="lib/jquery/jquery.cycle2.js"></script>
@@ -71,7 +68,6 @@
     <script src="lib/angular-resource/angular-resource.js"></script>
     <script src="lib/jquery/jquery.fullPage.min.js"></script>
 
-
     <!-- build:js scripts/scripts.js -->
     <script src="scripts/bootstrap-app.js"></script>
     <script src="scripts/app.js"></script>
@@ -80,6 +76,7 @@
     <script src="scripts/directives/bindScroll.drv.js"></script>
     <script src="modules/home/controllers/home.ctrl.js"></script>
     <script src="modules/home/directives/fullpage.drv.js"></script>
+    <script src="modules/aboutus/controllers/aboutus.ctrl.js"></script>
     <script src="modules/courses/controllers/courses.ctrl.js"></script>
     <script src="modules/courses/services/courses.svc.js"></script>
     <script src="modules/courses/directives/courses.drv.js"></script>
@@ -90,7 +87,6 @@
     <script src="modules/testimonials/controllers/testimonials.ctrl.js"></script>
     <script src="modules/toppers/controllers/toppers.ctrl.js"></script>
 
-    
     <script type="text/javascript">
         app.initialize();
     </script>
